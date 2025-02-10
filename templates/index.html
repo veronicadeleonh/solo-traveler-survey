@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Solo traveler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:wght@352&display=swap"
+        rel="stylesheet">
+</head>
+
+<body style="font-family: IBM Plex Sans;font-weight: 600;font-size:16px">
+
+<div style="display: flex; gap: 40px; height: 100vh">
+    <div style="width: 25%; background-color:#dfe4ea; padding:1%; color:#2f3542">
+        <h1 style="font-weight:900">Solo Traveler Survey</h1>
+        <form id="survey-form" method="POST" action="/submit_survey">
+
+            <label for="solo_travel">Have you ever traveled solo?</label><br>
+            <select name="solo_travel" id="solo_travel">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+
+            <hr style="border-color: #f4f1f148;">
+
+            <label for="trip_count">How many solo trips have you taken?</label><br>
+            <select name="trip_count" id="trip_count">
+                <option value="0-1">0-1</option>
+                <option value="2-5">2-5</option>
+                <option value="6+">6+</option>
+            </select><br>
+
+            <hr style="border-color: #f4f1f148;">
+
+            <label for="travel_reason">What’s your main reason for traveling solo?</label><br>
+            <select name="travel_reason" id="travel_reason">
+                <option value="Adventure">Adventure 🌿</option>
+                <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
+                <option value="Relaxation">Relaxation 🏖️</option>
+                <option value="Budget-friendly">Budget-friendly💰</option>
+            </select><br>
+
+            <hr style="border-color: #f4f1f148;">
+
+            <label for="trip_enjoyment">What do you enjoy most about your trips?</label><br>
+            <select name="trip_enjoyment" id="trip_enjoyment">
+                <option value="Practicing a new language">Practicing a new language 🗣️</option>
+                <option value="Meeting new people">Meeting new people 👫</option>
+                <option value="Exploring new places">Exploring new places 🏔️</option>
+                <option value="Trying new food">Trying new food 🍜</option>
+            </select><br>
+
+            <hr style="border-color: #f4f1f148;">
+
+            <label for="spontaneity">How spontaneous are you when planning a solo trip?</label><br>
+            <input type="range" name="spontaneity" min="1" max="10" value="5" class="slider" id="spontaneity"><br>
+
+            <hr style="border-color: #f4f1f148;">
+
+            <label for="next_destination">Do you already have in mind your next destination?</label>
+            <select name="next_destination" id="next_destination">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+
+            <hr style="border-color: #f4f1f148;">
+
+            <label for="enjoyment_rate">How much did you enjoy your last solo trip?</label><br>
+            <input type="range" name="enjoyment_rate" min="1" max="10" value="5" class="slider" id="enjoyment_rate"><br>
+
+            <hr style="border-color: #f4f1f148;">
+
+            <label for="travel_wishes">Tell us, in one sentence, how would be your best travel:</label>
+            <input type="text" id="travel_wishes" name="travel_wishes"><br><br>
+
+
+            <button type="submit">Submit</button>
+        </form>
+
+    <div style="background-color:#32323218;">
+        <div id="sentiment-result" style="display: none; margin-top: 10px;"></div>
+        <div id="cluster-result" style="display: none; margin-top: 10px;"></div>
+    </div>
+
+    </div>
+
+    <div style="width: 75%">
+        <div id="total-submissions-card"
+            style="width: 200px; padding: 15px; background-color: #f3f4f5; text-align: center;">
+            <p>Total Submissions</p>
+            <p id="total-submissions">Loading...</p>
+        </div>
+
+        <div style="display: flex; gap:24px;">
+            <div style="width:30%"><canvas id="soloTravelChart" width="200" height="100"></canvas></div>
+            <div style="width:50%"><canvas id="submissionsTime" width="200" height="100"></canvas></div>
+        </div>
+        <div style="display: flex; gap:24px">
+            <div style="width:50%"><canvas id="travelReasonCount" width="200" height="100"></canvas></div>
+            <div style="width:50%"><canvas id="tripCountChart" width="200" height="100"></canvas></div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script>
+
+    //GLOBAL VARIABLES
+    let soloTravelChart; 
+    let tripCountChart;
+    let travelReasonCount;
+    let submissionsTime;
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // TOTAL SUBMISSIONS
+        fetch("/total_submissions")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("total-submissions").textContent = data.total_submissions;
+            })
+            .catch(error => console.error("Error fetching total submissions:", error));
+
+
+        // SOLO TRAVEL CHART
+        fetch('/get_solo_travel_count')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('soloTravelChart').getContext('2d');
+                soloTravelChart = new Chart(ctx, {
+                    type: 'doughnut',  // You can change to 'pie' or another type if you prefer
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Count of Submissions',
+                            data: data.counts,  // Corresponding counts
+                            backgroundColor: ['rgba(46, 213, 115, 0.2)', 'rgba(153, 102, 255, 0.2)'],  // Different colors for solo vs not solo
+                            borderColor: ['rgba(46, 213, 115, 1)', 'rgba(153, 102, 255, 1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+
+        // HOW MANY TRIPS COUNT CHART
+        fetch('/get_trip_count')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('tripCountChart').getContext('2d');
+
+                // FETCHED DATA
+                tripCountChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Number of Solo Travelers by Trip Count',
+                            data: data.values,
+                            backgroundColor: 'rgba(255, 127, 80, 0.2)',
+                            borderColor: 'rgba(255, 127, 80, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching initial chart data:', error));
+
+
+        // TRAVEL REASON COUNT CHART
+        fetch('/get_travel_reason_data')
+            .then(response => response.json())
+            .then(data => {
+                const ctx2 = document.getElementById('travelReasonCount').getContext('2d');
+
+                // FETCHED DATA
+                travelReasonCount = new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Travel Reason',
+                            data: data.values,
+                            backgroundColor: 'rgba(255, 71, 87, 0.2)',
+                            borderColor: 'rgba(255, 71, 87, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching travel reason data:', error));
+
+
+        // SUBMISSIONS OVER TIME
+        fetch('/get_submissions_over_time')
+            .then(response => response.json())
+            .then(data => {
+                const ctx2 = document.getElementById('submissionsTime').getContext('2d');
+
+                // FETCHED DATA
+                travelReasonCount = new Chart(ctx2, {
+                    type: 'line',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Travel Reason',
+                            data: data.values,
+                            backgroundColor: 'rgba(30, 144, 255, 0.2)',
+                            borderColor: 'rgba(30, 144, 255, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching travel reason data:', error));
+
+
+
+        // HANDLE SURVEY SUBMISSION
+        const form = document.getElementById("survey-form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            fetch("/submit_survey", {
+                method: "POST",
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Survey submitted successfully:", data);
+
+
+                    // SENTIMENT PREDICTION
+                    const sentimentResultDiv = document.getElementById("sentiment-result");
+                    sentimentResultDiv.innerHTML = `<p>Your travel sentiment is <strong>${data.sentiment}</strong></p>`;
+                    sentimentResultDiv.style.display = "block";  // Make it visible
+
+                    // CLUSTER PREDICTION
+                    const clusterResultDiv = document.getElementById("cluster-result");
+                    clusterResultDiv.innerHTML = `<p>Your cluster: <strong>${data.travel_cluster}</strong></p>`;
+                    clusterResultDiv.style.display = "block";  // Ensure it's visible along with sentiment
+
+
+                    updateCharts();
+
+                })
+                .catch(error => {
+                    console.error("Error submitting survey:", error);
+                });
+        });
+
+
+        // UPDATE CHARTS FUNCTION - DONT TOUCH!
+        function updateCharts() {
+            fetch("/total_submissions")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("total-submissions").textContent = data.total_submissions;
+            })
+            .catch(error => console.error("Error fetching total submissions:", error));
+
+
+            fetch('/get_solo_travel_count')
+                .then(response => response.json())
+                .then(data => {
+                    // Update the solo travel chart
+                    soloTravelChart.data.labels = data.labels;  // Update labels
+                    soloTravelChart.data.datasets[0].data = data.counts;  // Update counts
+                    soloTravelChart.update();  // Apply the changes
+                })
+                .catch(error => console.error('Error fetching updated solo_travel_count:', error));
+
+
+            fetch('/get_trip_count')
+                .then(response => response.json())
+                .then(data => {
+                    // Update the trip count chart
+                    tripCountChart.data.labels = data.labels;
+                    tripCountChart.data.datasets[0].data = data.values;
+                    tripCountChart.update(); 
+                })
+                .catch(error => console.error('Error fetching updated get_trip_count:', error));
+
+
+            fetch('/get_travel_reason_data')
+                .then(response => response.json())
+                .then(data => {
+                    // Update the travel reason chart
+                    travelReasonCount.data.labels = data.labels;
+                    travelReasonCount.data.datasets[0].data = data.values;
+                    travelReasonCount.update(); 
+                })
+                .catch(error => console.error('Error fetching updated get_travel_reason_data:', error));
+
+        }
+    });
+</script>

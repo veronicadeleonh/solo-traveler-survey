@@ -1,0 +1,1001 @@
+solo_travel,trip_count,travel_reason,trip_enjoyment,spontaneity,next_destination,enjoyment_rate
+true,6+,Relaxation,Practicing a new language,3,false,10
+false,0-1,Adventure,Trying new food,6,true,2
+false,6+,Budget-friendly,Practicing a new language,5,false,7
+true,6+,Relaxation,,9,true,6
+false,6+,Budget-friendly,Meeting new people,5,true,1
+true,2-5,Budget-friendly,,1,false,2
+true,2-5,Adventure,Meeting new people,9,false,1
+false,6+,Adventure,Exploring new places,5,false,9
+false,6+,Cultural Immersion,Trying new food,4,false,5
+false,0-1,Adventure,Exploring new places,8,false,1
+false,6+,Relaxation,Meeting new people,10,false,9
+true,2-5,Relaxation,,4,false,7
+false,2-5,Adventure,Meeting new people,1,false,5
+false,0-1,Cultural Immersion,Meeting new people,2,false,4
+false,2-5,Cultural Immersion,Meeting new people,5,true,3
+true,0-1,Cultural Immersion,Trying new food,3,true,10
+false,0-1,Adventure,Exploring new places,10,false,2
+true,6+,Budget-friendly,Practicing a new language,5,false,5
+false,6+,Adventure,Trying new food,4,false,8
+true,6+,Adventure,Meeting new people,10,true,1
+false,6+,Cultural Immersion,Meeting new people,7,false,4
+true,6+,Relaxation,Meeting new people,6,false,8
+true,2-5,Adventure,Practicing a new language,9,true,1
+false,2-5,Adventure,Trying new food,9,false,10
+true,0-1,,Trying new food,8,true,3
+true,6+,Adventure,,2,false,4
+false,0-1,Cultural Immersion,Meeting new people,7,false,5
+true,0-1,Cultural Immersion,Practicing a new language,6,true,5
+false,6+,Adventure,Exploring new places,6,true,9
+false,0-1,Budget-friendly,Exploring new places,7,false,7
+true,2-5,Budget-friendly,Practicing a new language,7,true,8
+true,0-1,Adventure,Trying new food,6,false,6
+false,2-5,Cultural Immersion,Exploring new places,9,false,5
+true,0-1,Cultural Immersion,Practicing a new language,2,false,5
+false,2-5,Cultural Immersion,Trying new food,10,true,5
+false,0-1,Cultural Immersion,Meeting new people,7,false,8
+false,0-1,Adventure,,2,false,4
+true,6+,Cultural Immersion,Meeting new people,9,true,7
+false,0-1,Cultural Immersion,Exploring new places,9,true,2
+true,2-5,Adventure,Exploring new places,5,true,2
+false,0-1,Adventure,Exploring new places,7,false,2
+false,0-1,Relaxation,Meeting new people,5,true,6
+false,0-1,Relaxation,Trying new food,1,false,6
+true,,Budget-friendly,Exploring new places,6,true,9
+false,6+,Relaxation,Trying new food,5,false,3
+true,,Adventure,,4,false,3
+false,2-5,Cultural Immersion,Meeting new people,10,false,1
+false,0-1,Budget-friendly,Trying new food,3,false,7
+true,6+,Budget-friendly,Trying new food,4,true,9
+true,6+,Adventure,Meeting new people,3,false,2
+false,2-5,Budget-friendly,Meeting new people,7,false,10
+true,6+,Adventure,Practicing a new language,4,true,3
+false,0-1,Budget-friendly,Practicing a new language,10,false,5
+false,6+,Budget-friendly,Exploring new places,9,true,3
+false,6+,Adventure,Meeting new people,7,true,4
+false,2-5,Budget-friendly,Meeting new people,4,false,3
+true,2-5,Relaxation,Trying new food,8,false,10
+true,0-1,Budget-friendly,Trying new food,3,true,2
+false,2-5,Budget-friendly,Practicing a new language,2,true,6
+false,0-1,Adventure,Meeting new people,5,false,5
+false,6+,Cultural Immersion,Meeting new people,5,true,5
+false,6+,Budget-friendly,Practicing a new language,1,false,9
+false,0-1,Adventure,Exploring new places,1,true,10
+false,0-1,Budget-friendly,Practicing a new language,10,false,1
+true,6+,Adventure,Practicing a new language,1,true,2
+false,2-5,Budget-friendly,Exploring new places,7,false,10
+false,2-5,Relaxation,Meeting new people,10,true,1
+false,2-5,Adventure,Practicing a new language,8,false,10
+true,6+,Relaxation,Trying new food,4,false,2
+false,2-5,Budget-friendly,Exploring new places,9,true,4
+false,2-5,Budget-friendly,,8,false,10
+true,6+,Relaxation,Meeting new people,8,true,3
+false,6+,Cultural Immersion,,4,false,9
+false,2-5,Adventure,Exploring new places,10,true,8
+true,0-1,Cultural Immersion,Meeting new people,4,false,1
+false,6+,Relaxation,Trying new food,1,true,4
+false,6+,Adventure,Meeting new people,5,false,3
+false,6+,Budget-friendly,Trying new food,6,true,4
+false,2-5,Relaxation,Practicing a new language,2,false,7
+false,0-1,Cultural Immersion,Trying new food,2,true,3
+false,0-1,Adventure,Trying new food,4,false,9
+false,6+,Budget-friendly,Practicing a new language,7,true,10
+true,6+,Relaxation,Practicing a new language,2,true,3
+false,0-1,Relaxation,Meeting new people,4,true,2
+false,2-5,Budget-friendly,Exploring new places,1,false,6
+true,6+,Adventure,,10,true,3
+false,2-5,Adventure,Trying new food,5,false,4
+false,2-5,Budget-friendly,Meeting new people,6,false,9
+true,0-1,Cultural Immersion,Meeting new people,1,true,9
+false,6+,Relaxation,Exploring new places,8,false,9
+true,0-1,Adventure,Meeting new people,10,false,10
+false,2-5,Adventure,Trying new food,9,true,3
+false,0-1,Budget-friendly,Exploring new places,1,true,4
+true,6+,Adventure,Exploring new places,6,false,5
+true,0-1,Relaxation,Practicing a new language,1,false,7
+false,0-1,Adventure,Trying new food,9,false,10
+true,0-1,,Trying new food,10,false,6
+true,0-1,Relaxation,Meeting new people,6,false,1
+false,2-5,Adventure,Meeting new people,4,false,9
+true,0-1,Adventure,Exploring new places,10,true,6
+true,2-5,Relaxation,Trying new food,1,false,3
+false,2-5,Adventure,Exploring new places,2,false,8
+true,2-5,Adventure,,6,true,1
+false,6+,Relaxation,Meeting new people,9,false,6
+true,2-5,Budget-friendly,Practicing a new language,5,true,8
+true,6+,Budget-friendly,Meeting new people,2,true,9
+true,2-5,Adventure,Meeting new people,1,true,6
+true,2-5,Cultural Immersion,Trying new food,9,true,7
+true,6+,Adventure,Exploring new places,8,false,3
+true,0-1,,Exploring new places,8,true,6
+false,2-5,Budget-friendly,Practicing a new language,7,false,10
+false,0-1,,Exploring new places,4,true,7
+true,2-5,Cultural Immersion,Practicing a new language,9,true,9
+false,6+,Budget-friendly,Trying new food,6,true,7
+true,6+,Relaxation,Meeting new people,3,true,4
+true,6+,Cultural Immersion,Meeting new people,7,true,9
+false,0-1,Budget-friendly,Practicing a new language,9,true,8
+false,6+,Adventure,Meeting new people,8,true,1
+false,0-1,,Trying new food,6,true,2
+false,2-5,Cultural Immersion,Trying new food,8,false,8
+false,0-1,Adventure,Meeting new people,1,false,10
+true,6+,Relaxation,Trying new food,3,true,6
+true,0-1,Relaxation,Exploring new places,6,true,10
+false,2-5,Cultural Immersion,Meeting new people,3,true,1
+true,0-1,Cultural Immersion,Meeting new people,1,true,9
+true,6+,Relaxation,Practicing a new language,7,false,7
+true,6+,Cultural Immersion,Exploring new places,7,false,9
+false,2-5,Cultural Immersion,Trying new food,2,false,1
+false,6+,Relaxation,Meeting new people,6,true,2
+false,0-1,Budget-friendly,Trying new food,4,false,5
+true,,Relaxation,Trying new food,3,false,10
+true,0-1,Budget-friendly,Trying new food,10,false,3
+true,2-5,Relaxation,Trying new food,8,true,4
+false,2-5,Adventure,Trying new food,5,true,6
+true,6+,Relaxation,Meeting new people,4,false,5
+false,0-1,Cultural Immersion,Trying new food,9,false,4
+false,6+,,Trying new food,2,false,2
+false,0-1,Adventure,Practicing a new language,5,true,7
+true,6+,Budget-friendly,Trying new food,10,false,10
+true,0-1,Budget-friendly,Trying new food,2,true,9
+true,6+,Adventure,Trying new food,4,true,9
+false,2-5,Relaxation,Practicing a new language,7,false,3
+false,6+,Relaxation,Practicing a new language,5,true,3
+false,2-5,Relaxation,Exploring new places,3,true,3
+true,0-1,Adventure,Exploring new places,9,true,9
+false,0-1,Budget-friendly,Exploring new places,5,false,1
+false,0-1,Budget-friendly,Exploring new places,8,true,5
+true,6+,Relaxation,,7,false,3
+true,0-1,Budget-friendly,Trying new food,1,true,2
+false,0-1,Cultural Immersion,Exploring new places,3,false,8
+true,2-5,Relaxation,Meeting new people,10,false,6
+false,6+,Budget-friendly,Trying new food,9,false,7
+false,2-5,Relaxation,Trying new food,4,true,7
+false,0-1,Adventure,Trying new food,8,true,5
+false,2-5,Cultural Immersion,Meeting new people,7,false,6
+true,0-1,Adventure,Practicing a new language,6,false,5
+false,0-1,Adventure,Exploring new places,4,false,7
+false,2-5,Cultural Immersion,Trying new food,5,true,7
+false,6+,Adventure,Exploring new places,5,true,2
+true,6+,Cultural Immersion,Exploring new places,4,false,5
+false,2-5,Budget-friendly,Meeting new people,2,true,3
+true,6+,Cultural Immersion,Exploring new places,2,true,1
+false,0-1,Relaxation,Exploring new places,2,false,5
+false,2-5,Budget-friendly,Trying new food,2,false,6
+true,6+,Adventure,Meeting new people,3,true,8
+false,2-5,Adventure,Trying new food,7,false,1
+true,0-1,Cultural Immersion,Trying new food,6,true,7
+false,2-5,Relaxation,Exploring new places,7,false,3
+false,2-5,,Exploring new places,4,true,5
+false,2-5,Cultural Immersion,Trying new food,3,false,4
+true,6+,Budget-friendly,Practicing a new language,1,false,4
+false,2-5,Relaxation,Trying new food,10,false,2
+true,6+,Adventure,Exploring new places,8,true,7
+true,0-1,Relaxation,Practicing a new language,3,true,6
+false,0-1,Relaxation,Practicing a new language,9,false,7
+false,6+,Relaxation,,3,false,3
+true,0-1,Cultural Immersion,Trying new food,10,true,2
+true,6+,Cultural Immersion,Exploring new places,2,true,1
+true,6+,Adventure,Trying new food,6,true,5
+true,0-1,Adventure,Trying new food,2,false,10
+false,6+,Cultural Immersion,Trying new food,4,true,4
+true,2-5,Cultural Immersion,Practicing a new language,5,true,8
+true,6+,Adventure,Practicing a new language,6,true,7
+false,0-1,Adventure,Practicing a new language,1,false,5
+true,2-5,Adventure,Exploring new places,10,true,6
+false,6+,Relaxation,Practicing a new language,7,true,1
+false,0-1,Budget-friendly,Meeting new people,9,true,5
+false,6+,Adventure,Exploring new places,4,false,3
+false,0-1,Budget-friendly,Practicing a new language,8,false,7
+true,6+,Cultural Immersion,Meeting new people,9,true,1
+true,6+,Relaxation,Practicing a new language,4,false,4
+true,0-1,Relaxation,Exploring new places,4,true,2
+true,6+,Budget-friendly,Exploring new places,5,false,4
+false,0-1,Adventure,Trying new food,3,false,6
+false,6+,Adventure,Exploring new places,8,true,1
+false,0-1,Relaxation,Meeting new people,8,false,9
+false,0-1,Budget-friendly,Practicing a new language,6,true,8
+false,6+,Cultural Immersion,Practicing a new language,7,true,5
+false,6+,Budget-friendly,,1,false,10
+false,0-1,Cultural Immersion,Exploring new places,8,false,6
+true,0-1,Adventure,Practicing a new language,9,true,10
+true,2-5,Budget-friendly,Practicing a new language,1,true,4
+false,2-5,Adventure,Exploring new places,1,true,6
+false,6+,Budget-friendly,Trying new food,1,false,1
+false,,Relaxation,Trying new food,9,true,7
+false,6+,Adventure,Meeting new people,10,false,4
+true,6+,Budget-friendly,Trying new food,10,false,8
+false,,Cultural Immersion,Exploring new places,1,false,9
+true,2-5,Budget-friendly,Exploring new places,5,true,1
+true,,Budget-friendly,Trying new food,4,true,4
+true,2-5,Relaxation,Practicing a new language,10,false,6
+false,2-5,Budget-friendly,Practicing a new language,9,false,1
+true,0-1,Relaxation,Exploring new places,4,true,3
+false,0-1,Cultural Immersion,Meeting new people,1,false,10
+false,0-1,Budget-friendly,Exploring new places,9,true,9
+true,,Relaxation,Exploring new places,2,true,5
+false,2-5,Budget-friendly,Practicing a new language,10,true,7
+false,0-1,Relaxation,Meeting new people,4,true,8
+true,0-1,Cultural Immersion,Meeting new people,9,false,7
+true,2-5,Adventure,Practicing a new language,5,true,2
+false,0-1,Relaxation,Practicing a new language,10,false,10
+false,6+,Budget-friendly,Exploring new places,9,true,8
+false,2-5,Cultural Immersion,Exploring new places,8,true,7
+true,6+,Cultural Immersion,Trying new food,3,false,9
+false,6+,Cultural Immersion,Trying new food,5,false,1
+false,2-5,Cultural Immersion,Exploring new places,7,true,9
+false,6+,Adventure,Trying new food,6,false,7
+true,0-1,Adventure,Exploring new places,7,false,10
+true,6+,Budget-friendly,Practicing a new language,3,false,9
+true,0-1,Relaxation,Exploring new places,10,true,10
+false,2-5,Budget-friendly,Trying new food,5,false,8
+false,0-1,Relaxation,Exploring new places,4,false,2
+false,2-5,Relaxation,Meeting new people,4,true,7
+true,0-1,Relaxation,Trying new food,6,true,9
+true,2-5,Relaxation,Exploring new places,1,true,4
+false,0-1,Cultural Immersion,Meeting new people,9,false,3
+false,6+,Cultural Immersion,Meeting new people,9,true,7
+false,6+,Relaxation,Trying new food,3,false,5
+true,2-5,Adventure,Trying new food,10,false,8
+true,2-5,Relaxation,Exploring new places,1,false,1
+false,6+,Cultural Immersion,Meeting new people,6,true,7
+true,,Cultural Immersion,Practicing a new language,10,true,5
+false,0-1,Relaxation,Exploring new places,5,true,9
+false,6+,Budget-friendly,Practicing a new language,2,true,8
+true,,Relaxation,Exploring new places,4,false,6
+false,2-5,Relaxation,Practicing a new language,6,false,1
+false,0-1,Adventure,Meeting new people,6,false,3
+false,6+,,Meeting new people,5,false,4
+false,0-1,Budget-friendly,Trying new food,8,true,3
+true,6+,Relaxation,Meeting new people,7,false,10
+false,0-1,Budget-friendly,Trying new food,9,false,8
+true,2-5,Adventure,Practicing a new language,9,false,3
+false,0-1,Cultural Immersion,Practicing a new language,7,true,8
+false,6+,Budget-friendly,Trying new food,6,true,1
+false,6+,Cultural Immersion,Exploring new places,5,false,4
+false,2-5,Budget-friendly,Meeting new people,10,true,9
+true,2-5,Cultural Immersion,Meeting new people,7,false,5
+false,2-5,Relaxation,Meeting new people,5,false,1
+false,0-1,Cultural Immersion,Exploring new places,7,true,9
+false,0-1,Cultural Immersion,Practicing a new language,9,true,2
+false,0-1,Budget-friendly,Practicing a new language,10,false,3
+true,2-5,Budget-friendly,Trying new food,2,false,8
+true,6+,Cultural Immersion,Trying new food,6,false,10
+false,6+,Relaxation,Trying new food,7,false,10
+false,0-1,Relaxation,,2,true,2
+true,2-5,Relaxation,Trying new food,10,true,6
+false,2-5,Budget-friendly,Meeting new people,5,false,2
+false,0-1,Budget-friendly,Exploring new places,6,true,3
+true,2-5,Budget-friendly,,1,true,9
+true,0-1,Adventure,Exploring new places,2,true,7
+true,2-5,Relaxation,Exploring new places,10,false,10
+false,0-1,Relaxation,Exploring new places,10,true,10
+false,6+,Cultural Immersion,Trying new food,1,false,4
+false,2-5,Cultural Immersion,Trying new food,9,true,4
+false,2-5,Budget-friendly,Exploring new places,4,true,3
+false,6+,Relaxation,Trying new food,6,false,7
+false,0-1,Adventure,Trying new food,9,false,2
+false,2-5,Budget-friendly,Practicing a new language,1,true,9
+true,6+,Cultural Immersion,Trying new food,7,true,8
+false,2-5,Cultural Immersion,Trying new food,6,false,3
+true,2-5,Cultural Immersion,,2,false,6
+true,6+,Budget-friendly,Trying new food,6,true,7
+false,2-5,Cultural Immersion,Exploring new places,7,false,4
+false,2-5,Adventure,Exploring new places,7,false,2
+true,0-1,Budget-friendly,Trying new food,7,false,7
+true,6+,Relaxation,Meeting new people,2,true,9
+false,2-5,Relaxation,Practicing a new language,9,false,2
+true,0-1,Relaxation,Trying new food,6,true,10
+true,2-5,Adventure,Trying new food,4,false,5
+false,6+,Relaxation,Practicing a new language,6,false,4
+false,,Cultural Immersion,Trying new food,7,true,9
+true,6+,Budget-friendly,Exploring new places,6,true,1
+true,2-5,Cultural Immersion,Exploring new places,9,false,1
+false,6+,Budget-friendly,,3,false,7
+false,0-1,Budget-friendly,Exploring new places,5,true,4
+true,2-5,Cultural Immersion,Trying new food,2,false,2
+true,6+,Budget-friendly,Practicing a new language,1,false,10
+false,2-5,Cultural Immersion,Trying new food,6,true,2
+false,6+,Adventure,Meeting new people,9,false,3
+false,0-1,Relaxation,Trying new food,8,true,5
+true,6+,Adventure,Practicing a new language,4,false,10
+true,,Relaxation,Trying new food,9,false,2
+false,6+,Cultural Immersion,,2,true,2
+true,6+,Relaxation,Meeting new people,10,true,5
+true,2-5,Relaxation,Meeting new people,1,false,8
+false,2-5,Cultural Immersion,,7,false,1
+false,6+,Relaxation,Exploring new places,4,false,9
+false,6+,Adventure,Meeting new people,10,false,7
+false,0-1,Relaxation,,1,true,8
+false,6+,Adventure,Practicing a new language,2,true,1
+true,6+,Relaxation,Practicing a new language,5,true,3
+true,6+,Adventure,Exploring new places,7,true,7
+true,0-1,Budget-friendly,Trying new food,8,false,6
+false,0-1,,Exploring new places,5,true,3
+true,,Cultural Immersion,Meeting new people,6,true,4
+true,2-5,Adventure,Meeting new people,9,true,1
+true,2-5,Cultural Immersion,Trying new food,7,false,8
+false,,Relaxation,Meeting new people,3,true,3
+true,6+,Budget-friendly,Practicing a new language,8,true,10
+true,6+,Adventure,Exploring new places,2,true,6
+true,0-1,Cultural Immersion,Meeting new people,5,false,6
+false,0-1,Relaxation,Practicing a new language,8,false,6
+false,0-1,Relaxation,Practicing a new language,5,false,10
+false,0-1,Relaxation,Exploring new places,3,true,10
+true,6+,Budget-friendly,Practicing a new language,3,true,1
+false,2-5,Cultural Immersion,Practicing a new language,1,true,1
+true,6+,Cultural Immersion,Exploring new places,10,false,9
+true,6+,Budget-friendly,Meeting new people,9,false,5
+false,0-1,Relaxation,,1,true,2
+false,2-5,Relaxation,Practicing a new language,10,true,7
+true,6+,Budget-friendly,Trying new food,3,true,10
+false,2-5,Relaxation,Trying new food,10,false,2
+false,0-1,Cultural Immersion,Meeting new people,1,false,4
+false,6+,Relaxation,Meeting new people,6,false,6
+true,2-5,Adventure,Exploring new places,6,true,3
+false,2-5,Cultural Immersion,Trying new food,9,true,4
+false,0-1,Relaxation,Trying new food,8,true,6
+false,6+,Relaxation,Meeting new people,6,false,4
+true,6+,Relaxation,Trying new food,3,false,9
+true,0-1,Cultural Immersion,Exploring new places,10,false,3
+false,0-1,Relaxation,Trying new food,1,false,4
+true,,Adventure,,6,false,1
+false,2-5,Adventure,Trying new food,5,true,7
+true,2-5,Relaxation,Exploring new places,2,false,1
+true,0-1,Cultural Immersion,Trying new food,8,true,8
+true,6+,Relaxation,Exploring new places,6,false,4
+false,6+,Adventure,Practicing a new language,2,true,3
+false,0-1,Adventure,Meeting new people,3,false,10
+false,2-5,Adventure,Exploring new places,5,true,2
+true,2-5,Cultural Immersion,Exploring new places,2,false,10
+true,0-1,Budget-friendly,Trying new food,3,false,10
+true,6+,Adventure,Meeting new people,5,false,4
+false,2-5,Cultural Immersion,Trying new food,2,true,10
+true,2-5,Cultural Immersion,Trying new food,5,false,7
+false,6+,Adventure,Trying new food,8,true,7
+false,0-1,Relaxation,Exploring new places,3,false,10
+false,0-1,Cultural Immersion,Practicing a new language,3,true,5
+true,2-5,Adventure,Trying new food,1,false,4
+true,2-5,Budget-friendly,Practicing a new language,3,true,2
+true,2-5,Adventure,Meeting new people,1,false,4
+true,2-5,Cultural Immersion,Practicing a new language,6,true,8
+true,2-5,Budget-friendly,Trying new food,8,false,7
+false,6+,Cultural Immersion,Trying new food,8,false,5
+false,6+,Adventure,Meeting new people,8,false,2
+false,0-1,Cultural Immersion,Exploring new places,7,false,10
+true,0-1,Budget-friendly,Practicing a new language,8,false,1
+true,2-5,Cultural Immersion,Meeting new people,3,false,4
+true,0-1,Relaxation,Meeting new people,8,false,2
+true,6+,Relaxation,Exploring new places,4,true,8
+false,2-5,Adventure,Meeting new people,7,true,2
+false,0-1,Budget-friendly,Practicing a new language,7,true,2
+false,6+,Budget-friendly,Practicing a new language,7,false,10
+false,0-1,Budget-friendly,Meeting new people,9,false,4
+false,6+,Relaxation,Trying new food,4,true,9
+false,6+,Cultural Immersion,Exploring new places,8,false,7
+true,6+,Budget-friendly,Meeting new people,10,true,2
+true,0-1,Budget-friendly,Exploring new places,5,false,9
+false,0-1,Relaxation,Trying new food,5,true,1
+true,0-1,Adventure,Exploring new places,5,false,7
+true,0-1,Relaxation,Trying new food,9,false,8
+true,2-5,Budget-friendly,Meeting new people,8,true,1
+true,2-5,Budget-friendly,Meeting new people,9,true,10
+false,2-5,Budget-friendly,Trying new food,2,true,5
+false,2-5,Budget-friendly,,9,false,3
+false,0-1,Cultural Immersion,Exploring new places,2,true,2
+false,0-1,Adventure,Trying new food,3,false,3
+true,6+,Relaxation,Trying new food,3,false,5
+false,6+,Adventure,Practicing a new language,1,false,10
+true,6+,Relaxation,Exploring new places,9,true,3
+false,6+,Relaxation,Practicing a new language,6,false,7
+false,2-5,Adventure,Exploring new places,2,true,5
+false,2-5,Relaxation,Practicing a new language,3,false,2
+false,2-5,Adventure,Exploring new places,5,false,2
+false,6+,Relaxation,,3,true,3
+false,2-5,Budget-friendly,Exploring new places,7,true,7
+true,0-1,Relaxation,Trying new food,9,false,7
+true,0-1,Cultural Immersion,Exploring new places,9,true,7
+false,0-1,Adventure,Trying new food,4,true,6
+true,2-5,Cultural Immersion,Trying new food,4,true,9
+true,0-1,Adventure,Meeting new people,8,false,10
+true,2-5,Cultural Immersion,Exploring new places,1,false,9
+false,0-1,Relaxation,Practicing a new language,6,false,4
+false,6+,Relaxation,Meeting new people,1,true,3
+false,2-5,Relaxation,Practicing a new language,9,true,1
+true,2-5,Cultural Immersion,Meeting new people,5,false,7
+false,2-5,Budget-friendly,Exploring new places,6,false,4
+false,0-1,Cultural Immersion,Trying new food,9,false,10
+true,2-5,Adventure,,2,false,10
+false,2-5,Adventure,Trying new food,7,true,5
+true,2-5,Budget-friendly,Practicing a new language,7,true,9
+true,2-5,Budget-friendly,Meeting new people,7,true,7
+true,2-5,Relaxation,Trying new food,7,false,10
+true,0-1,Cultural Immersion,Practicing a new language,8,true,7
+true,0-1,Cultural Immersion,Practicing a new language,3,false,4
+false,2-5,Cultural Immersion,Practicing a new language,9,true,1
+true,,Budget-friendly,Practicing a new language,9,false,10
+false,6+,Cultural Immersion,Exploring new places,1,false,5
+false,2-5,Relaxation,Practicing a new language,9,false,10
+true,6+,Budget-friendly,Trying new food,10,true,5
+false,2-5,Adventure,Trying new food,1,false,9
+true,0-1,Adventure,Exploring new places,3,true,6
+false,2-5,Budget-friendly,Exploring new places,7,true,2
+true,0-1,Relaxation,Trying new food,9,false,2
+false,0-1,Budget-friendly,Practicing a new language,9,true,7
+false,2-5,Relaxation,Practicing a new language,4,true,10
+true,6+,,Trying new food,9,false,8
+false,0-1,Cultural Immersion,Meeting new people,2,false,9
+true,2-5,Adventure,Meeting new people,9,false,8
+false,6+,Adventure,Trying new food,3,false,2
+false,6+,Cultural Immersion,Trying new food,5,true,3
+true,2-5,Cultural Immersion,Exploring new places,1,true,8
+true,6+,Budget-friendly,Meeting new people,2,true,3
+true,2-5,Adventure,Trying new food,1,false,8
+false,0-1,Cultural Immersion,Exploring new places,3,true,1
+false,0-1,Budget-friendly,Meeting new people,4,false,3
+false,6+,Adventure,Trying new food,2,false,4
+true,2-5,Adventure,Trying new food,1,false,2
+false,0-1,Cultural Immersion,Practicing a new language,10,false,7
+false,6+,Cultural Immersion,Trying new food,2,false,2
+true,0-1,Relaxation,Practicing a new language,6,true,5
+false,0-1,Cultural Immersion,Meeting new people,3,true,6
+true,2-5,Adventure,Practicing a new language,1,true,9
+false,0-1,Budget-friendly,Trying new food,4,true,2
+true,2-5,Cultural Immersion,Meeting new people,10,true,8
+false,0-1,Adventure,Practicing a new language,6,false,5
+true,2-5,Relaxation,Meeting new people,7,false,2
+true,2-5,Cultural Immersion,,10,false,4
+true,2-5,Budget-friendly,Practicing a new language,7,false,6
+false,0-1,Cultural Immersion,Meeting new people,10,false,7
+true,6+,Relaxation,Exploring new places,1,true,9
+false,0-1,Budget-friendly,Meeting new people,4,false,1
+true,2-5,Adventure,Meeting new people,3,false,6
+true,0-1,Relaxation,Practicing a new language,9,false,6
+true,,Budget-friendly,Meeting new people,5,true,3
+true,2-5,Adventure,Trying new food,10,true,5
+true,0-1,Budget-friendly,Meeting new people,8,false,8
+false,2-5,Cultural Immersion,Trying new food,8,false,10
+false,2-5,Budget-friendly,Practicing a new language,9,false,9
+true,6+,Cultural Immersion,Exploring new places,1,true,4
+true,2-5,Relaxation,Meeting new people,10,false,10
+false,2-5,Budget-friendly,Meeting new people,9,false,6
+false,6+,Relaxation,,8,true,1
+true,6+,Relaxation,Practicing a new language,4,false,7
+false,6+,Cultural Immersion,Practicing a new language,8,false,1
+false,2-5,Budget-friendly,Practicing a new language,3,false,4
+true,0-1,Relaxation,Exploring new places,8,true,1
+true,2-5,Cultural Immersion,Practicing a new language,7,true,7
+false,0-1,Adventure,Exploring new places,2,false,8
+false,0-1,Budget-friendly,Exploring new places,10,false,6
+false,6+,Adventure,Trying new food,1,false,10
+true,6+,Adventure,Trying new food,9,true,8
+true,2-5,Relaxation,Trying new food,5,false,6
+false,0-1,Budget-friendly,Practicing a new language,10,true,6
+true,6+,Budget-friendly,Practicing a new language,10,false,6
+true,0-1,Adventure,Practicing a new language,3,true,1
+false,6+,Budget-friendly,Meeting new people,7,true,9
+false,0-1,Cultural Immersion,,7,true,5
+false,2-5,Relaxation,Exploring new places,10,false,3
+false,0-1,Budget-friendly,Meeting new people,9,true,7
+false,0-1,Cultural Immersion,Exploring new places,3,true,6
+true,0-1,Adventure,Meeting new people,2,true,10
+true,0-1,Relaxation,Meeting new people,8,true,9
+false,0-1,Budget-friendly,Practicing a new language,3,false,7
+false,,Cultural Immersion,Practicing a new language,1,true,3
+true,0-1,Cultural Immersion,Practicing a new language,4,false,4
+true,6+,Budget-friendly,Exploring new places,2,false,2
+false,0-1,Budget-friendly,Exploring new places,9,true,9
+false,6+,Cultural Immersion,Exploring new places,3,true,5
+true,,Relaxation,Practicing a new language,1,false,2
+false,0-1,Cultural Immersion,Practicing a new language,2,true,7
+false,2-5,Adventure,Exploring new places,3,true,3
+false,0-1,Budget-friendly,Practicing a new language,7,true,2
+false,6+,Adventure,Exploring new places,5,false,3
+true,0-1,Adventure,Exploring new places,1,false,5
+false,2-5,Adventure,Exploring new places,8,false,8
+true,2-5,Budget-friendly,Practicing a new language,9,false,2
+true,2-5,Budget-friendly,Practicing a new language,4,false,9
+true,6+,Adventure,Trying new food,7,false,9
+true,,Adventure,Trying new food,6,false,2
+false,2-5,Cultural Immersion,Meeting new people,5,true,1
+true,2-5,Adventure,Practicing a new language,8,false,4
+false,0-1,Relaxation,,3,false,10
+false,6+,Cultural Immersion,Meeting new people,5,false,3
+false,2-5,Cultural Immersion,,4,true,2
+false,0-1,Relaxation,Trying new food,3,false,4
+true,6+,Budget-friendly,Trying new food,2,true,5
+false,2-5,Cultural Immersion,Meeting new people,7,false,4
+false,2-5,Relaxation,Exploring new places,10,false,4
+false,0-1,Budget-friendly,Exploring new places,10,false,3
+false,0-1,Relaxation,Exploring new places,5,false,2
+true,0-1,Cultural Immersion,Meeting new people,2,false,10
+true,6+,Budget-friendly,Meeting new people,5,true,4
+true,2-5,Cultural Immersion,Practicing a new language,10,true,6
+false,0-1,Cultural Immersion,,1,true,3
+false,6+,Cultural Immersion,Exploring new places,3,true,7
+false,6+,Relaxation,Practicing a new language,5,true,2
+true,2-5,Relaxation,Exploring new places,7,false,10
+false,6+,Relaxation,Meeting new people,1,false,4
+true,2-5,Budget-friendly,Trying new food,7,false,4
+true,2-5,Cultural Immersion,Practicing a new language,7,false,9
+false,6+,Adventure,Exploring new places,7,true,8
+false,2-5,Relaxation,Practicing a new language,3,false,7
+true,2-5,Adventure,Practicing a new language,9,true,1
+false,2-5,Adventure,,9,false,10
+false,0-1,Budget-friendly,Exploring new places,8,true,4
+true,6+,Relaxation,Exploring new places,8,true,3
+false,0-1,Adventure,Exploring new places,2,false,6
+false,0-1,Budget-friendly,Exploring new places,10,false,5
+false,6+,Relaxation,Trying new food,3,true,5
+true,6+,Relaxation,Meeting new people,4,false,9
+false,6+,Cultural Immersion,Exploring new places,8,false,6
+true,2-5,Adventure,Exploring new places,7,true,1
+false,,Adventure,Exploring new places,2,true,5
+true,2-5,Adventure,Exploring new places,8,true,10
+true,2-5,Budget-friendly,Meeting new people,5,false,10
+true,6+,Relaxation,Practicing a new language,1,false,6
+false,2-5,Adventure,Meeting new people,10,true,2
+false,0-1,Relaxation,Meeting new people,7,false,6
+false,2-5,Adventure,Practicing a new language,3,false,9
+true,2-5,Relaxation,Practicing a new language,6,false,4
+false,2-5,Cultural Immersion,Practicing a new language,8,false,1
+true,0-1,Adventure,Exploring new places,4,false,7
+false,0-1,Relaxation,Trying new food,1,false,3
+false,0-1,Budget-friendly,Practicing a new language,6,false,9
+true,2-5,Cultural Immersion,Trying new food,6,false,2
+true,0-1,Budget-friendly,,5,false,5
+false,2-5,Relaxation,Exploring new places,6,true,1
+false,0-1,Cultural Immersion,Exploring new places,4,true,1
+false,2-5,Relaxation,Practicing a new language,8,false,3
+false,0-1,Adventure,Meeting new people,7,true,2
+true,6+,Adventure,Practicing a new language,10,true,2
+true,6+,Relaxation,Meeting new people,2,false,9
+true,6+,Adventure,Exploring new places,6,false,3
+false,0-1,Relaxation,Trying new food,6,true,8
+false,6+,Budget-friendly,Exploring new places,10,true,4
+true,2-5,Cultural Immersion,Exploring new places,8,false,7
+false,0-1,Relaxation,Meeting new people,8,true,5
+true,6+,Budget-friendly,Exploring new places,1,true,4
+true,6+,Adventure,Meeting new people,3,false,10
+true,6+,Budget-friendly,Practicing a new language,2,true,5
+false,0-1,Adventure,Practicing a new language,2,true,3
+false,6+,Adventure,Trying new food,3,false,10
+false,0-1,Relaxation,Exploring new places,4,false,2
+false,2-5,Relaxation,Meeting new people,1,false,4
+true,0-1,Cultural Immersion,Practicing a new language,9,true,9
+false,,Budget-friendly,Trying new food,2,true,1
+false,6+,Cultural Immersion,Meeting new people,7,false,4
+true,6+,Budget-friendly,Trying new food,3,true,10
+false,2-5,Cultural Immersion,Meeting new people,6,true,4
+false,2-5,Budget-friendly,Practicing a new language,2,true,10
+false,0-1,Adventure,Exploring new places,10,false,2
+true,0-1,Relaxation,Practicing a new language,7,false,3
+true,2-5,Cultural Immersion,Meeting new people,4,true,2
+false,2-5,Adventure,Exploring new places,8,true,6
+false,6+,Relaxation,Exploring new places,7,false,4
+true,,Cultural Immersion,Practicing a new language,10,false,6
+true,0-1,Budget-friendly,Practicing a new language,7,false,7
+false,6+,Budget-friendly,Practicing a new language,1,true,10
+true,,Budget-friendly,Practicing a new language,1,false,2
+false,0-1,Budget-friendly,Trying new food,1,true,8
+true,2-5,Budget-friendly,Exploring new places,4,false,6
+false,0-1,Cultural Immersion,Exploring new places,3,true,1
+false,2-5,Relaxation,Practicing a new language,7,false,9
+true,2-5,Budget-friendly,Meeting new people,2,true,7
+true,6+,Adventure,Practicing a new language,7,true,7
+false,6+,Relaxation,Trying new food,10,true,6
+true,2-5,Budget-friendly,Practicing a new language,3,true,1
+false,0-1,Cultural Immersion,Practicing a new language,2,false,5
+false,6+,Cultural Immersion,Exploring new places,4,true,8
+false,0-1,Relaxation,,1,true,3
+false,,Budget-friendly,Exploring new places,2,true,8
+true,6+,Cultural Immersion,Practicing a new language,7,true,5
+true,0-1,Adventure,Meeting new people,2,false,9
+true,2-5,Cultural Immersion,Meeting new people,1,true,6
+false,2-5,Relaxation,Practicing a new language,3,false,8
+true,6+,Budget-friendly,Exploring new places,5,false,10
+true,0-1,Adventure,,9,false,7
+false,0-1,Adventure,Meeting new people,10,true,3
+true,0-1,Adventure,Exploring new places,1,true,4
+true,,Cultural Immersion,Meeting new people,2,false,4
+true,2-5,Relaxation,Exploring new places,1,false,2
+false,0-1,,Exploring new places,8,true,5
+true,0-1,Cultural Immersion,Exploring new places,8,false,5
+false,2-5,Relaxation,Trying new food,6,false,1
+false,6+,Cultural Immersion,Exploring new places,9,false,7
+true,2-5,Cultural Immersion,Trying new food,1,false,1
+true,0-1,Budget-friendly,Practicing a new language,5,true,9
+false,6+,Adventure,Trying new food,3,true,7
+true,2-5,Cultural Immersion,Trying new food,9,true,1
+true,2-5,Relaxation,Meeting new people,1,false,6
+true,2-5,Relaxation,Meeting new people,4,true,5
+true,6+,Budget-friendly,Meeting new people,2,true,1
+false,6+,Cultural Immersion,,7,true,8
+false,0-1,Cultural Immersion,Practicing a new language,5,false,10
+false,2-5,Cultural Immersion,Exploring new places,6,true,1
+true,6+,Adventure,Trying new food,3,false,3
+false,0-1,Cultural Immersion,Meeting new people,7,true,10
+false,2-5,Budget-friendly,Practicing a new language,10,true,3
+true,0-1,Relaxation,Trying new food,8,true,4
+false,6+,Relaxation,Meeting new people,6,true,8
+true,6+,Adventure,,7,false,1
+false,6+,Relaxation,Exploring new places,2,true,7
+true,0-1,Relaxation,Meeting new people,5,true,10
+true,2-5,Cultural Immersion,Exploring new places,1,true,6
+false,2-5,Budget-friendly,Meeting new people,8,true,2
+true,2-5,Adventure,Exploring new places,10,false,9
+true,0-1,Adventure,Meeting new people,7,true,7
+false,0-1,Relaxation,Trying new food,10,false,8
+true,0-1,Relaxation,Meeting new people,10,false,4
+false,0-1,Relaxation,Meeting new people,8,true,2
+true,6+,Budget-friendly,Exploring new places,4,false,9
+false,6+,Adventure,Meeting new people,6,false,5
+false,0-1,Budget-friendly,Practicing a new language,9,true,6
+false,0-1,Budget-friendly,Exploring new places,6,true,4
+true,6+,,Exploring new places,7,false,8
+true,2-5,Adventure,Trying new food,6,false,7
+false,6+,Cultural Immersion,Exploring new places,4,true,8
+true,6+,Relaxation,Meeting new people,8,false,6
+true,2-5,Adventure,Practicing a new language,2,true,6
+false,0-1,Cultural Immersion,Practicing a new language,2,false,9
+true,0-1,Cultural Immersion,Practicing a new language,3,false,5
+true,2-5,Budget-friendly,Meeting new people,9,false,8
+false,0-1,,Trying new food,4,false,3
+false,2-5,Budget-friendly,Trying new food,10,false,10
+false,0-1,Cultural Immersion,Practicing a new language,7,true,8
+false,6+,Relaxation,Practicing a new language,1,true,10
+false,0-1,Relaxation,Trying new food,1,false,9
+false,0-1,Budget-friendly,Trying new food,10,true,4
+false,0-1,Budget-friendly,Exploring new places,1,true,6
+false,6+,Budget-friendly,Meeting new people,9,false,2
+true,6+,Budget-friendly,Practicing a new language,1,false,5
+false,2-5,Adventure,Practicing a new language,3,true,10
+true,2-5,Adventure,Exploring new places,8,true,4
+false,,Adventure,Exploring new places,1,true,2
+true,2-5,Relaxation,Meeting new people,2,true,5
+false,0-1,Cultural Immersion,Meeting new people,9,true,8
+false,0-1,Budget-friendly,Exploring new places,5,true,10
+true,2-5,Budget-friendly,Exploring new places,3,false,10
+false,6+,Adventure,Trying new food,3,false,2
+true,0-1,Adventure,Practicing a new language,5,false,9
+false,6+,Budget-friendly,Meeting new people,2,false,6
+true,0-1,Relaxation,Practicing a new language,10,true,6
+false,2-5,Relaxation,Meeting new people,10,true,8
+false,2-5,Adventure,Exploring new places,7,true,3
+true,2-5,Budget-friendly,Trying new food,2,true,8
+true,0-1,Relaxation,Practicing a new language,9,false,1
+true,0-1,Adventure,Exploring new places,1,false,6
+false,2-5,Cultural Immersion,Exploring new places,9,false,8
+true,0-1,Cultural Immersion,Practicing a new language,1,false,8
+false,6+,Relaxation,Trying new food,6,false,1
+true,0-1,Cultural Immersion,Meeting new people,10,false,3
+false,6+,Cultural Immersion,Meeting new people,3,false,7
+true,2-5,Cultural Immersion,Practicing a new language,5,false,10
+false,0-1,Adventure,Trying new food,3,false,10
+false,2-5,Adventure,Exploring new places,5,false,3
+false,2-5,Budget-friendly,Trying new food,1,true,1
+false,6+,Cultural Immersion,Trying new food,6,true,7
+true,0-1,,Exploring new places,4,false,10
+false,2-5,Budget-friendly,Exploring new places,1,true,5
+false,2-5,Relaxation,Trying new food,10,false,6
+false,0-1,Relaxation,Trying new food,7,false,1
+false,0-1,Cultural Immersion,,7,true,10
+false,0-1,Cultural Immersion,Meeting new people,10,false,6
+false,2-5,Budget-friendly,Trying new food,5,false,9
+false,2-5,Cultural Immersion,Practicing a new language,2,true,9
+false,6+,Relaxation,Trying new food,10,false,9
+false,2-5,Budget-friendly,Meeting new people,5,true,9
+true,6+,Budget-friendly,Trying new food,1,false,7
+true,2-5,Relaxation,Practicing a new language,8,false,4
+true,6+,Cultural Immersion,Exploring new places,1,false,5
+false,0-1,Adventure,Exploring new places,10,false,2
+true,2-5,Adventure,Meeting new people,5,false,8
+false,0-1,Adventure,Trying new food,10,false,2
+false,0-1,Relaxation,Meeting new people,3,true,7
+true,0-1,Cultural Immersion,Trying new food,7,false,9
+false,6+,Cultural Immersion,Meeting new people,2,false,3
+false,6+,Adventure,Practicing a new language,2,false,1
+false,6+,Cultural Immersion,Meeting new people,10,true,3
+false,0-1,Cultural Immersion,Meeting new people,2,true,4
+true,6+,Relaxation,Exploring new places,6,true,3
+false,2-5,Budget-friendly,Meeting new people,7,true,10
+true,2-5,Adventure,Meeting new people,9,false,3
+true,6+,Budget-friendly,Exploring new places,9,false,7
+false,,Cultural Immersion,Exploring new places,7,false,9
+true,6+,Budget-friendly,Practicing a new language,8,false,9
+true,2-5,Cultural Immersion,Meeting new people,10,true,7
+false,6+,Adventure,Exploring new places,10,false,2
+false,2-5,Budget-friendly,Practicing a new language,5,true,8
+false,6+,Cultural Immersion,Trying new food,1,true,8
+false,6+,Adventure,Practicing a new language,6,true,5
+false,2-5,Adventure,Meeting new people,4,false,6
+false,2-5,Budget-friendly,Practicing a new language,4,true,8
+true,0-1,Cultural Immersion,Exploring new places,4,true,7
+false,2-5,Cultural Immersion,Exploring new places,2,true,6
+false,6+,Relaxation,Meeting new people,6,true,10
+false,6+,Budget-friendly,Trying new food,7,false,3
+false,2-5,Relaxation,Trying new food,2,false,1
+false,6+,Relaxation,Trying new food,3,true,2
+false,6+,Budget-friendly,Trying new food,5,false,6
+false,2-5,Relaxation,Exploring new places,5,true,9
+false,0-1,Relaxation,,2,false,9
+false,2-5,Adventure,Meeting new people,10,false,4
+false,2-5,Adventure,Trying new food,4,false,3
+true,6+,Cultural Immersion,Practicing a new language,1,true,2
+false,,Budget-friendly,,10,true,8
+false,6+,Relaxation,Meeting new people,5,true,1
+false,6+,Adventure,Meeting new people,1,true,6
+false,6+,Relaxation,Practicing a new language,4,true,4
+true,2-5,Relaxation,Practicing a new language,4,false,6
+false,2-5,Cultural Immersion,Practicing a new language,9,false,2
+true,6+,Adventure,Trying new food,6,true,10
+true,6+,Cultural Immersion,Practicing a new language,7,true,4
+false,0-1,,Trying new food,6,false,10
+true,6+,Budget-friendly,Trying new food,2,false,9
+true,2-5,Cultural Immersion,Trying new food,6,true,7
+false,0-1,Budget-friendly,Exploring new places,3,false,10
+true,0-1,Cultural Immersion,Meeting new people,2,true,5
+false,0-1,Cultural Immersion,Trying new food,1,false,6
+true,0-1,Relaxation,Practicing a new language,7,true,3
+false,2-5,Budget-friendly,Meeting new people,9,true,4
+false,2-5,Adventure,Exploring new places,8,false,9
+false,0-1,Budget-friendly,Meeting new people,6,true,3
+true,0-1,Relaxation,Trying new food,10,false,10
+false,2-5,Adventure,Exploring new places,1,true,1
+true,0-1,Cultural Immersion,,6,false,9
+true,2-5,Adventure,Practicing a new language,1,false,9
+false,0-1,Relaxation,Meeting new people,2,true,2
+false,2-5,Relaxation,Practicing a new language,7,false,4
+false,0-1,Relaxation,Exploring new places,3,true,6
+false,0-1,Relaxation,Practicing a new language,2,false,6
+false,6+,Relaxation,Meeting new people,8,true,1
+true,0-1,Adventure,Meeting new people,6,true,1
+true,2-5,Cultural Immersion,Meeting new people,10,true,3
+false,0-1,Budget-friendly,Practicing a new language,2,false,10
+true,6+,Relaxation,Meeting new people,2,true,4
+false,0-1,Relaxation,Exploring new places,7,false,2
+true,6+,Adventure,Trying new food,9,false,1
+false,2-5,Relaxation,Practicing a new language,6,true,4
+true,2-5,Budget-friendly,Meeting new people,1,true,9
+false,0-1,Cultural Immersion,Trying new food,5,true,5
+false,6+,Cultural Immersion,Practicing a new language,2,true,3
+true,6+,Relaxation,Meeting new people,10,true,5
+true,2-5,Cultural Immersion,Meeting new people,4,true,8
+true,2-5,Budget-friendly,Trying new food,1,true,3
+false,6+,Cultural Immersion,Practicing a new language,9,false,4
+true,2-5,Relaxation,Trying new food,6,false,5
+false,2-5,Cultural Immersion,Meeting new people,1,false,5
+false,0-1,Relaxation,Exploring new places,1,false,7
+false,0-1,Relaxation,Exploring new places,5,false,4
+true,0-1,Relaxation,Trying new food,2,true,6
+true,0-1,Budget-friendly,Meeting new people,9,true,10
+true,6+,Cultural Immersion,Exploring new places,2,true,9
+false,2-5,Relaxation,Practicing a new language,8,true,7
+false,6+,Adventure,Trying new food,5,false,9
+true,2-5,Relaxation,Meeting new people,4,true,8
+false,2-5,Budget-friendly,Trying new food,5,false,3
+false,2-5,Budget-friendly,Meeting new people,9,false,1
+true,0-1,Budget-friendly,Practicing a new language,7,true,2
+false,0-1,Adventure,Trying new food,5,true,3
+true,0-1,Relaxation,Exploring new places,3,true,10
+true,2-5,Budget-friendly,Meeting new people,10,false,8
+true,0-1,Cultural Immersion,Practicing a new language,5,true,8
+true,2-5,Relaxation,Exploring new places,9,false,7
+true,2-5,Cultural Immersion,Exploring new places,9,false,10
+true,2-5,Budget-friendly,Exploring new places,3,false,8
+false,6+,Budget-friendly,Practicing a new language,10,true,4
+true,2-5,Cultural Immersion,Trying new food,6,true,10
+false,2-5,Adventure,Trying new food,6,false,3
+false,2-5,Adventure,Meeting new people,5,false,9
+true,6+,Adventure,Meeting new people,9,true,10
+false,6+,Relaxation,,5,false,6
+true,0-1,Relaxation,Meeting new people,6,true,4
+false,2-5,Cultural Immersion,Exploring new places,9,false,9
+true,0-1,Cultural Immersion,Trying new food,4,true,5
+false,6+,Adventure,Meeting new people,8,false,4
+false,0-1,Budget-friendly,Meeting new people,1,true,9
+true,2-5,Cultural Immersion,Trying new food,6,false,7
+false,6+,Adventure,Exploring new places,8,true,9
+false,6+,Relaxation,Practicing a new language,4,false,7
+true,2-5,Cultural Immersion,Trying new food,4,false,1
+true,2-5,Cultural Immersion,Meeting new people,7,true,3
+false,6+,Budget-friendly,Meeting new people,5,true,9
+false,6+,Relaxation,Exploring new places,8,false,6
+false,6+,Adventure,Exploring new places,6,true,8
+true,0-1,Cultural Immersion,Trying new food,4,true,4
+false,6+,Budget-friendly,Exploring new places,1,false,9
+true,0-1,Budget-friendly,Meeting new people,6,false,8
+false,0-1,Budget-friendly,Trying new food,1,true,1
+true,0-1,Budget-friendly,Exploring new places,9,false,4
+true,2-5,Budget-friendly,Meeting new people,8,false,8
+true,6+,Cultural Immersion,Trying new food,6,false,8
+false,0-1,,Trying new food,7,true,8
+true,6+,Relaxation,Exploring new places,7,true,3
+true,0-1,Cultural Immersion,,4,false,9
+true,0-1,Cultural Immersion,Trying new food,8,true,6
+false,2-5,Budget-friendly,,3,true,2
+true,6+,Budget-friendly,Meeting new people,8,true,1
+true,2-5,Budget-friendly,Meeting new people,9,false,10
+false,6+,Cultural Immersion,Trying new food,5,true,6
+true,2-5,Cultural Immersion,Meeting new people,10,true,7
+false,0-1,Relaxation,Exploring new places,3,true,4
+false,2-5,Cultural Immersion,Exploring new places,7,true,6
+true,2-5,Cultural Immersion,Meeting new people,9,true,7
+true,0-1,Cultural Immersion,Trying new food,8,false,3
+false,2-5,Budget-friendly,Trying new food,9,false,9
+false,2-5,Relaxation,Practicing a new language,9,false,6
+false,6+,Adventure,Trying new food,7,true,6
+false,2-5,Cultural Immersion,Practicing a new language,4,true,2
+true,6+,Budget-friendly,Exploring new places,3,false,10
+true,6+,Budget-friendly,Trying new food,10,false,8
+false,0-1,Budget-friendly,Trying new food,10,true,10
+true,0-1,Relaxation,Trying new food,4,true,10
+true,2-5,Relaxation,Practicing a new language,3,false,7
+true,6+,Cultural Immersion,Practicing a new language,8,true,9
+false,6+,Budget-friendly,Trying new food,9,true,6
+false,0-1,Relaxation,Exploring new places,4,true,6
+false,0-1,Relaxation,Trying new food,4,true,5
+false,2-5,Relaxation,Trying new food,10,false,8
+false,0-1,Adventure,Trying new food,1,false,9
+true,0-1,Adventure,Exploring new places,6,false,1
+false,0-1,,Exploring new places,10,false,7
+true,0-1,Adventure,,4,false,7
+false,0-1,,Meeting new people,2,false,7
+true,2-5,Adventure,Exploring new places,1,true,2
+true,6+,Adventure,Trying new food,8,true,5
+true,2-5,Relaxation,Meeting new people,1,true,2
+true,6+,Adventure,Meeting new people,5,false,9
+true,,Budget-friendly,Trying new food,9,false,5
+false,0-1,Adventure,Trying new food,5,false,9
+true,6+,Cultural Immersion,Trying new food,1,true,5
+true,2-5,Cultural Immersion,,4,true,10
+true,2-5,Cultural Immersion,Exploring new places,10,false,9
+true,6+,Relaxation,Meeting new people,7,true,10
+false,2-5,Adventure,Practicing a new language,2,false,10
+true,6+,Budget-friendly,Exploring new places,7,false,1
+false,6+,Budget-friendly,,5,true,9
+true,0-1,Cultural Immersion,Exploring new places,9,true,3
+true,6+,Cultural Immersion,Exploring new places,1,false,5
+false,2-5,Adventure,Exploring new places,7,false,8
+false,2-5,Budget-friendly,Practicing a new language,7,false,1
+true,0-1,Budget-friendly,Practicing a new language,4,true,10
+true,,Relaxation,Trying new food,4,true,4
+false,2-5,,Meeting new people,2,true,6
+true,2-5,Adventure,Practicing a new language,9,false,3
+false,0-1,Relaxation,Practicing a new language,9,false,10
+true,6+,Relaxation,Meeting new people,5,false,6
+true,2-5,Adventure,,7,true,3
+true,2-5,Relaxation,Exploring new places,1,true,5
+false,6+,Cultural Immersion,Exploring new places,10,false,9
+true,0-1,Adventure,Meeting new people,6,true,6
+true,0-1,,Trying new food,1,false,3
+false,6+,Cultural Immersion,Exploring new places,10,false,3
+false,0-1,Cultural Immersion,Trying new food,10,true,4
+false,2-5,Cultural Immersion,Practicing a new language,5,true,8
+false,2-5,Cultural Immersion,Trying new food,2,true,3
+true,0-1,Adventure,Exploring new places,3,true,9
+false,0-1,Cultural Immersion,Practicing a new language,9,true,5
+false,6+,Adventure,Trying new food,7,false,10
+true,6+,Relaxation,Trying new food,4,true,3
+true,2-5,Budget-friendly,Practicing a new language,5,false,4
+false,6+,Adventure,Practicing a new language,10,true,6
+false,0-1,Adventure,Meeting new people,1,false,3
+false,,Cultural Immersion,Practicing a new language,8,true,6
+false,0-1,Adventure,Trying new food,7,false,7
+false,0-1,Relaxation,Practicing a new language,10,false,4
+false,0-1,Budget-friendly,Trying new food,5,true,7
+true,2-5,Cultural Immersion,Trying new food,3,true,5
+true,6+,Cultural Immersion,Practicing a new language,4,true,5
+true,0-1,Adventure,Trying new food,4,false,1
+false,6+,Relaxation,Exploring new places,5,true,2
+true,2-5,Budget-friendly,Practicing a new language,7,true,4
+false,0-1,Budget-friendly,Practicing a new language,6,false,10
+false,2-5,Relaxation,Trying new food,10,false,10
+true,6+,Adventure,Exploring new places,4,true,3
+false,6+,,Trying new food,2,true,6
+false,6+,Adventure,Meeting new people,8,false,5
+false,0-1,Adventure,Exploring new places,9,false,9
+true,2-5,Budget-friendly,Trying new food,1,true,7
+false,,Cultural Immersion,Meeting new people,3,false,5
+true,2-5,Relaxation,Meeting new people,5,true,7
+false,2-5,Adventure,Practicing a new language,8,false,3
+false,0-1,Cultural Immersion,Trying new food,5,true,8
+false,2-5,Adventure,Exploring new places,1,false,7
+false,6+,Cultural Immersion,Trying new food,10,false,1
+false,0-1,Relaxation,Trying new food,7,false,2
+true,0-1,Cultural Immersion,Trying new food,8,true,1
+false,0-1,Relaxation,Exploring new places,9,false,1
+true,2-5,Relaxation,,4,true,8
+false,6+,Budget-friendly,Trying new food,3,true,1
+true,0-1,Budget-friendly,Exploring new places,3,false,8
+true,0-1,Budget-friendly,Exploring new places,7,true,10
+true,2-5,Cultural Immersion,Practicing a new language,6,true,7
+true,2-5,Adventure,Practicing a new language,2,true,8
+true,2-5,Budget-friendly,Exploring new places,8,false,1
+false,6+,Relaxation,,5,true,5
+false,6+,Relaxation,Practicing a new language,4,false,4
+false,6+,Cultural Immersion,Trying new food,9,false,5
+false,0-1,Cultural Immersion,Practicing a new language,3,false,7
+false,2-5,Budget-friendly,Meeting new people,4,false,7
+true,6+,Adventure,Exploring new places,2,true,10
+true,0-1,Budget-friendly,Exploring new places,5,false,9
+false,2-5,Budget-friendly,,1,false,3
+false,6+,Adventure,Exploring new places,9,false,6
+true,2-5,Cultural Immersion,Practicing a new language,8,false,1
+true,0-1,Adventure,Exploring new places,10,true,8
+false,2-5,Relaxation,Exploring new places,7,false,6
+true,0-1,Relaxation,Meeting new people,3,true,4
+false,2-5,Relaxation,Meeting new people,1,true,2
+false,2-5,Adventure,Trying new food,4,true,8
+false,0-1,Cultural Immersion,Practicing a new language,6,false,10
+false,2-5,Adventure,Meeting new people,6,true,2
+false,2-5,Budget-friendly,Trying new food,1,false,2
+false,6+,Relaxation,Trying new food,8,false,8
+true,0-1,Relaxation,Meeting new people,3,false,10
+false,0-1,Adventure,Exploring new places,3,true,6
+true,2-5,Relaxation,Exploring new places,5,true,10
+false,2-5,Budget-friendly,Meeting new people,9,false,4
+false,6+,Adventure,Meeting new people,8,true,7
+false,2-5,Cultural Immersion,,1,true,10
+true,0-1,Relaxation,Trying new food,3,true,5
+false,2-5,Adventure,Meeting new people,5,false,8
+true,6+,Budget-friendly,Practicing a new language,4,false,8
+true,0-1,Cultural Immersion,Trying new food,9,false,4
+false,6+,Relaxation,Exploring new places,7,false,7
+false,2-5,Cultural Immersion,,1,true,9
+false,2-5,Cultural Immersion,Trying new food,7,true,2
+true,6+,Cultural Immersion,Exploring new places,2,false,7
+false,0-1,Cultural Immersion,Exploring new places,10,true,4
+false,2-5,Budget-friendly,Exploring new places,3,false,7
+true,0-1,Adventure,Meeting new people,9,false,8
+false,2-5,Adventure,Meeting new people,1,true,5
+false,0-1,Budget-friendly,Exploring new places,1,true,4
+true,6+,Budget-friendly,Trying new food,8,false,6
+false,2-5,Relaxation,Exploring new places,1,false,2
+false,0-1,Relaxation,Meeting new people,1,true,1
+false,2-5,Adventure,Practicing a new language,4,true,7
+false,0-1,Adventure,Practicing a new language,8,true,6
+true,6+,Relaxation,Trying new food,6,false,9
+false,6+,Relaxation,Trying new food,3,false,5
+false,2-5,Relaxation,Trying new food,4,true,9
+true,6+,Adventure,Trying new food,6,true,8
+false,,Adventure,Practicing a new language,8,false,6
+true,2-5,Adventure,Practicing a new language,2,true,2
+true,0-1,Budget-friendly,Trying new food,5,false,3
+false,2-5,Cultural Immersion,Exploring new places,2,true,7
+true,2-5,Cultural Immersion,Exploring new places,7,false,9
+true,2-5,Adventure,,6,true,9
+false,6+,Adventure,Meeting new people,10,true,10
+false,0-1,Relaxation,Practicing a new language,6,true,6
+true,6+,Relaxation,Exploring new places,2,false,3
+false,6+,Relaxation,Practicing a new language,5,false,6
+true,6+,Adventure,Meeting new people,3,false,4
+false,0-1,Budget-friendly,Exploring new places,2,false,6
+false,6+,Cultural Immersion,Practicing a new language,3,true,2
+false,2-5,Adventure,Practicing a new language,4,true,7
+false,2-5,Budget-friendly,Meeting new people,10,true,1
+true,0-1,Budget-friendly,Exploring new places,8,true,1
+true,2-5,Budget-friendly,Exploring new places,7,true,8
+true,2-5,Budget-friendly,Practicing a new language,10,true,10
+true,2-5,Relaxation,Exploring new places,1,false,10
+false,2-5,Cultural Immersion,Meeting new people,8,false,7
+false,6+,Relaxation,Trying new food,9,true,7
+true,2-5,Budget-friendly,Practicing a new language,7,true,4
+true,0-1,Cultural Immersion,Exploring new places,8,false,2
+false,6+,Cultural Immersion,Exploring new places,4,true,9
+false,2-5,Relaxation,Practicing a new language,4,false,1
+false,0-1,Adventure,Meeting new people,9,false,2
+true,2-5,Adventure,Exploring new places,7,true,2
+false,0-1,Budget-friendly,Trying new food,5,false,3
+false,0-1,Cultural Immersion,Meeting new people,2,true,2
+false,2-5,Adventure,Meeting new people,5,true,2
+false,2-5,Relaxation,Trying new food,6,true,3
+false,0-1,Cultural Immersion,Trying new food,7,true,9
+true,2-5,Budget-friendly,Meeting new people,6,true,4
+false,6+,Relaxation,Practicing a new language,3,false,8
+false,0-1,Relaxation,Meeting new people,8,false,10
+true,6+,Adventure,Trying new food,4,false,1
+true,2-5,Relaxation,Practicing a new language,3,false,9
+true,0-1,Adventure,Meeting new people,9,false,7
+false,0-1,Cultural Immersion,Meeting new people,9,false,8
