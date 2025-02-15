@@ -9,7 +9,6 @@ import re
 
 load_dotenv()
 
-app = Flask(__name__)
 
 db_config = {
     "host": os.getenv("DB_HOST"),
@@ -17,6 +16,9 @@ db_config = {
     "password": os.getenv("DB_PASSWORD"),
     "database": os.getenv("DB_NAME"),
 }
+
+app = Flask(__name__, static_folder=os.path.join(os.getcwd(), 'static'))
+
 
 def get_db_connection():
     connection = mysql.connector.connect(**db_config)
@@ -27,7 +29,6 @@ def get_db_connection():
 @app.route("/")
 def home():
     return render_template("index.html")
-
 
 
 # LOAD MODELS FOR THE UI
