@@ -1,0 +1,28 @@
+{
+  "name": "solo_travel_survey",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "tailwindcss -i static/css/tailwind-input.css -o static/css/styles.css --minify" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veronicadeleonh/solo-traveler-survey.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veronicadeleonh/solo-traveler-survey/issues"
+  },
+  "homepage": "https://github.com/veronicadeleonh/solo-traveler-survey#readme",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

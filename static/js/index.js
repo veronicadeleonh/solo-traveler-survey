@@ -4,6 +4,10 @@ let tripCountChart;
 let travelReasonCount;
 let submissionsTime;
 
+// Chart.defaults.backgroundColor = '#9BD0F5';
+// Chart.defaults.borderColor = '#36A2EB';
+Chart.defaults.color = '#fff'
+
 document.addEventListener('DOMContentLoaded', function () {
 
 // TOTAL SUBMISSIONS
