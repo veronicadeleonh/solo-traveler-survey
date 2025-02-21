@@ -6,7 +6,7 @@ let submissionsTime;
 
 // Chart.defaults.backgroundColor = '#9BD0F5';
 // Chart.defaults.borderColor = '#36A2EB';
-Chart.defaults.color = '#fff'
+// Chart.defaults.color = '#fff'
 
 document.addEventListener('DOMContentLoaded', function () {
 

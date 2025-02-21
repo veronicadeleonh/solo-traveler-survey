@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template, jsonify, send_from_directory
+from flask import Flask, request, render_template, jsonify
 import mysql.connector
 import pandas as pd
 from datetime import datetime
@@ -17,17 +17,13 @@ db_config = {
     "database": os.getenv("DB_NAME"),
 }
 
-app = Flask(__name__, static_folder="static", static_url_path="/static")
+app = Flask(__name__)
 
 
 def get_db_connection():
     connection = mysql.connector.connect(**db_config)
     return connection
 
-# Serve the static CSS directly if needed
-@app.route('/static/css/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(os.path.join(app.root_path, 'static', 'css'), filename)
 
 # HOME
 @app.route("/")
