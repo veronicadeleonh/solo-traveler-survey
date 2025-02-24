@@ -20,5 +20,8 @@
   "homepage": "https://github.com/veronicadeleonh/solo-traveler-survey#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "flowbite": "^3.1.2"
   }
 }
