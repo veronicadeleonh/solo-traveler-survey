@@ -10,7 +10,7 @@
 
     <title>Solo traveler Survey</title>
 
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,9 @@
     <div style="display: flex; gap: 40px; height: 100vh">
         <div style="width: 25%; background-color:#dfe4ea; padding:1%; color:#2f3542">
             <h1 style="font-weight:900">Solo Traveler Survey</h1>
+            <div class="bg-blue-500 p-4 text-white">
+                Hello, World!
+            </div>
             <form id="survey-form" method="POST" action="/submit_survey">
 
                 <label for="solo_travel">Have you ever traveled solo?</label><br>
