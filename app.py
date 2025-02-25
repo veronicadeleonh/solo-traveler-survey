@@ -232,30 +232,36 @@ def get_trip_count():
 
 # TRAVEL REASON COUNT
 @app.route('/get_travel_reason_data', methods=['GET'])
-def get_results():
+def get_travel_reason_data():
     try:
         conn = get_db_connection()
         cursor = conn.cursor(dictionary=True)
 
         cursor.execute("""
-            SELECT travel_reason, COUNT(*) AS count
+            SELECT 
+                travel_reason, 
+                SUM(CASE WHEN solo_travel = 1 THEN 1 ELSE 0 END) AS solo_count,
+                SUM(CASE WHEN solo_travel = 0 THEN 1 ELSE 0 END) AS non_solo_count
             FROM survey_responses
             WHERE travel_reason IS NOT NULL
             GROUP BY travel_reason
         """)
+
         results = cursor.fetchall()
 
         labels = [row['travel_reason'] for row in results]
-        values = [row['count'] for row in results]
+        solo_counts = [row['solo_count'] for row in results]
+        non_solo_counts = [row['non_solo_count'] for row in results]
 
-        return jsonify(labels=labels, values=values)
+        return jsonify(labels=labels, solo_counts=solo_counts, non_solo_counts=non_solo_counts)
 
     except mysql.connector.Error as err:
-        return f"Error: {err}"
+        return jsonify({"error": str(err)})
 
     finally:
         cursor.close()
         conn.close()
+
 
 
 

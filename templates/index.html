@@ -23,127 +23,152 @@
 <body>
 
     <div class="flex h-screen">
-        <div class="bg-zinc-50 w-1/4 p-4 text-zinc-900 px-6">
-            <h1 class="font-black uppercase text-3xl mb-6">Solo Traveler Survey</h1>
+        <div class="bg-lime-100 w-1/4  text-lime-950 p-8">
+            <h1 class="font-black uppercase text-3xl mb-6 text-lime-950">Solo Traveler Survey</h1>
 
-            <form id="survey-form" method="POST" action="/submit_survey">
+            <div class="mb-6 text-lime-800 text-sm">
+                <p>This is just a small personal project, not a big research study—I'm simply curious about different experiences and
+                perspectives. Your answers will help me explore this topic, and there are no right or wrong answers. Let's get started!</p>
+            </div>
 
-                <script>
-                    function nextStep(currentStep, nextStep) {
-                        document.getElementById(currentStep).classList.add('hidden');
-                        document.getElementById(nextStep).classList.remove('hidden');
-                    }
-                </script>
+            <div class="border border-lime-400 p-6 bg-white">
+                <form id="survey-form" method="POST" action="/submit_survey">
 
-                <!-- First Question -->
-
-                <label for="solo_travel" class="block mb-2 text-base font-normal text-zinc-900 dark:text-white">Do you consider yourself a solo traveler?</label>
-                <div class="flex items-center gap-5">
-                    <div class="flex items-center">
-                        <input id="solo_travel" type="radio" value="" name="solo_travel"
-                            class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500">
-                        <label for="solo_travel" class="ms-2 text-base font-normal text-zinc-900">Yes</label>
+                    <!-- First Question -->
+                    <div id="step-1" class="step flex flex-col justify-center w-full">
+                        <div>
+                            <label for="solo_travel" class="block mb-4 text-lg font-semibold text-lime-950 text-left">Do you consider yourself a
+                                solo traveler?</label>
+                            <div class="flex gap-5">
+                                <div class="flex items-center">
+                                    <input id="solo_travel_yes" type="radio" name="solo_travel" value="yes" class="w-4 h-4">
+                                    <label for="solo_travel_yes" class="ms-2 text-base">Yes</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="solo_travel_no" type="radio" name="solo_travel" value="no" class="w-4 h-4">
+                                    <label for="solo_travel_no" class="ms-2 text-base">No</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center">
-                        <input checked id="solo_travel" type="radio" value="" name="solo_travel"
-                            class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500">
-                        <label for="solo_travel" class="ms-2 text-base font-normal text-zinc-900">No</label>
+                    
+                    <!--  Second Question -->
+
+                    <div id="step-2" class="step flex flex-col justify-center w-full">
+                        <div>
+                            <label for="trip-count" class="block mb-2 text-lg font-semibold text-zinc-900 text-left">How many solo trips have you
+                                taken?</label>
+                            <select id="trip-count" name="trip_count"
+                                class="appearance-none bg-zinc-50 border border-zinc-200 text-zinc-500 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
+                                <option selected>-</option>
+                                <option value="0-1">0-1</option>
+                                <option value="2-5">2-5</option>
+                                <option value="6+">6+</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-    
-                <hr class="border-zinc-200 mb-4 mt-4">
-    
+                    
+                    <!-- Third Question -->
 
-                <label for="trip-count" class="block mb-2 text-base font-normal text-zinc-90">How many solo trips have you taken?</label>
-                <select id="trip-count" name="trip_count"
-                    class="appearance-none bg-zinc-50 border border-zinc-200 text-zinc-500 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
-                    <option selected>-</option>
-                    <option value="0-1">0-1</option>
-                    <option value="2-5">2-5</option>
-                    <option value="6+">6+</option>
-                </select>
-    
-                <hr class="border-zinc-200 mb-4 mt-4">
-
-                <!-- Third Question -->
-
-                <label for="travel_reason" class="block mb-2 text-base font-normal text-zinc-900 dark:text-white">What motivates you to travel solo the most?</label>
-                <select id="travel_reason" name="travel_reason"
-                    class="bg-zinc-50 border  border-zinc-200 text-zinc-900 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
-                    <option selected>-</option>
-                    <option value="Adventure">Adventure 🌿</option>
-                    <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
-                    <option value="Relaxation">Relaxation 🏖️</option>
-                    <option value="Budget-friendly">Budget-friendly💰</option>
-                </select>
-    
-                <hr class="border-zinc-200 mb-4 mt-4">
-    
-                <!-- Fourth Question -->
-
-                <label for="trip_enjoyment" class="block mb-2 text-base font-normal text-zinc-900">What’s the best part of traveling solo for you?</label>
-                <select id="trip_enjoyment" name="trip_enjoyment"
-                    class="bg-zinc-50 border border-zinc-200 text-zinc-900 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
-                    <option selected>-</option>
-                    <option value="Practicing a new language">Practicing a new language 🗣️</option>
-                    <option value="Meeting new people">Meeting new people 👫</option>
-                    <option value="Exploring new places">Exploring new places 🏔️</option>
-                    <option value="Trying new food">Trying new food 🍜</option>
-                </select>
-    
-                <hr class="border-zinc-200 mb-4 mt-4">
-    
-                <!-- Fifth Question -->
-
-                <label for="spontaneity" class="block mb-2 text-base font-normal text-zinc-900">How spontaneous are you when planning a solo trip?</label>
-                <div class="relative mb-6">
-                    <input id="spontaneity" name="spontaneity" type="range" min="1" max="10" value="5" 
-                        class="slider w-full mb-4">
-                    <span class="text-sm text-zinc-700 absolute start-0 -bottom-6">🐌 Slow & Thoughtful</span>
-                    <span class="text-sm text-zinc-700 absolute end-0 -bottom-6">🎒 Backpack-and-Go</span>
-                </div>
-    
-                <hr class="border-zinc-200 mb-4 mt-4">
-    
-                <label for="next_destination" class="block mb-2 text-base font-normal text-zinc-900">Do you already have your next destination in mind?</label>
-                <div class="flex items-center gap-5">
-                    <div class="flex items-center">
-                        <input id="next_destination" type="radio" value="" name="next_destination"
-                            class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500 dark:focus:ring-violet-600">
-                        <label for="next_destination" class="ms-2 text-base font-normal text-zinc-900 dark:text-zinc-300">Yes</label>
+                    <div id="step-3" class="step flex flex-col justify-center w-full">
+                        <label for="travel_reason" class="block mb-2 text-base font-normal text-zinc-900 dark:text-white">What motivates you to
+                            travel solo the most?</label>
+                        <select id="travel_reason" name="travel_reason"
+                            class="bg-zinc-50 border  border-zinc-200 text-zinc-900 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
+                            <option selected>-</option>
+                            <option value="Adventure">Adventure 🌿</option>
+                            <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
+                            <option value="Relaxation">Relaxation 🏖️</option>
+                            <option value="Budget-friendly">Budget-friendly💰</option>
+                        </select>
                     </div>
-                    <div class="flex items-center">
-                        <input checked id="next_destination" type="radio" value="" name="next_destination"
-                            class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500 dark:focus:ring-violet-600">
-                        <label for="next_destination" class="ms-2 text-base font-normal text-zinc-900 dark:text-zinc-300">No</label>
+
+                    <!-- Fourth Question -->
+
+                    <div id="step-4" class="step flex flex-col justify-center w-full"> 
+                        <label for="trip_enjoyment" class="block mb-2 text-base font-normal text-zinc-900">What’s the best part of traveling
+                            solo for you?</label>
+                        <select id="trip_enjoyment" name="trip_enjoyment"
+                            class="bg-zinc-50 border border-zinc-200 text-zinc-900 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
+                            <option selected>-</option>
+                            <option value="Practicing a new language">Practicing a new language 🗣️</option>
+                            <option value="Meeting new people">Meeting new people 👫</option>
+                            <option value="Exploring new places">Exploring new places 🏔️</option>
+                            <option value="Trying new food">Trying new food 🍜</option>
+                        </select>
                     </div>
-                </div>
 
-                <hr class="border-zinc-200 mb-4 mt-4">
-    
-                <!-- Sixth Question -->
+                    <!-- Fifth Question -->
 
-                <label for="enjoyment_rate" class="block mb-2 text-base font-normal text-zinc-900">How much did you enjoy your last solo trip?</label>
-                <div class="relative mb-6">
-                    <input id="enjoyment_rate" name="enjoyment_rate" type="range" min="1" max="10" value="5"
-                        class="slider w-full mb-4">
-                    <span class="text-sm text-zinc-700 absolute start-0 -bottom-6">😭 "Never Again"</span>
-                    <span class="text-sm text-zinc-700 absolute end-0 -bottom-6">🏝️ "Want to go back now!"</span>
-                </div>
+                    <div id="step-2" class="step flex flex-col justify-center w-full">
+                        <div>
+                            <label for="spontaneity" class="block mb-2 text-base font-normal text-zinc-900">How spontaneous are you when planning a
+                                solo trip?</label>
+                            <div class="relative mb-6">
+                                <input id="spontaneity" name="spontaneity" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
+                                <span class="text-sm text-zinc-700 absolute start-0 -bottom-6">🐌 Slow & Thoughtful</span>
+                                <span class="text-sm text-zinc-700 absolute end-0 -bottom-6">🎒 Backpack-and-Go</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <hr class="border-zinc-200 mb-4 mt-4">
-    
-                <!-- Seventh Question -->
-                
-                <div class="mb-6">
-                    <label for="travel_wishes" class="block mb-2 text-base font-medium text-zinc-900">Describe your dream trip in one sentence.</label>
-                    <input type="text" id="travel_wishes" name="travel_wishes"
-                        class="block w-full p-4 text-zinc-900 border border-zinc-200 bg-zinc-50 text-base focus:ring-violet-500 focus:border-violet-500">
-                </div>
-    
-                <!-- Submit -->
-                <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-500">Submit</button>
-            </form>
+                    <!-- Fifth Question -->
+                    
+                    <div id="step-5" class="step flex flex-col justify-center w-ful">
+                        <label for="next_destination" class="block mb-2 text-base font-normal text-zinc-900">Do you already have your next
+                            destination in mind?</label>
+                        <div class="flex items-center gap-5">
+                            <div class="flex items-center">
+                                <input id="next_destination" type="radio" value="" name="next_destination"
+                                    class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500 dark:focus:ring-violet-600">
+                                <label for="next_destination" class="ms-2 text-base font-normal text-zinc-900 dark:text-zinc-300">Yes</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input checked id="next_destination" type="radio" value="" name="next_destination"
+                                    class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500 dark:focus:ring-violet-600">
+                                <label for="next_destination" class="ms-2 text-base font-normal text-zinc-900 dark:text-zinc-300">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sixth Question -->
+                    
+                    <div id="step-6" class="step flex flex-col justify-center w-full">
+                        <div>
+                            <label for="enjoyment_rate" class="block mb-2 text-base font-normal text-zinc-900">How much did you enjoy your last solo
+                                trip?</label>
+                            <div class="relative mb-6">
+                                <input id="enjoyment_rate" name="enjoyment_rate" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
+                                <span class="text-sm text-zinc-700 absolute start-0 -bottom-6">😭 "Never Again"</span>
+                                <span class="text-sm text-zinc-700 absolute end-0 -bottom-6">🏝️ "Want to go back now!"</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seventh Question -->
+                    
+                    <div id="step-7" class="step flex flex-col justify-center w-full">
+                        <div class="mb-6">
+                            <label for="travel_wishes" class="block mb-2 text-base font-normal text-zinc-900">Describe your dream trip in one
+                                sentence.</label>
+                            <input type="text" id="travel_wishes" name="travel_wishes"
+                                class="block w-full p-4 text-zinc-900 border border-zinc-200 bg-zinc-50 text-base focus:ring-violet-500 focus:border-violet-500">
+                        </div>
+                    </div>
+
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between mt-4">
+                        <button type="button" id="prevBtn" class="bg-zinc-300 text-white py-2 px-4 hidden">Previous</button>
+                        <button type="button" id="nextBtn" class="bg-violet-600 text-white py-2 px-4">Next</button>
+                        <button type="submit" id="submitBtn" class="bg-violet-600 text-white py-2 px-4 hidden">Submit</button>
+                    </div>
+        
+                    <!-- Submit -->
+                    <!-- <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-500">Submit</button> -->
+                </form>
+            </div>
+
     
             <div class="bg-zinc-800 bg-opacity-20 mt-4">
                 <div id="sentiment-result" class="hidden mt-2"></div>
@@ -152,9 +177,9 @@
 
         </div>
 
-        <div class="bg-zinc-100 w-3/4 p-4">
-            <div id="total-submissions-card" class="w-[200px] p-[15px] bg-[#f3f4f5] text-center">
-                <p>Total Submissions</p>
+        <div class="bg-white w-3/4 p-8">
+            <div id="total-submissions-card" class="flex gap-4 p-4 border border-lime-700 text-center mb-6 items-center w-fit	">
+                <p class="uppercase text-sm whitespace-nowrap font-semibold">Total Submissions</p>
                 <p id="total-submissions">Loading...</p>
             </div>
 
@@ -172,6 +197,37 @@
 
     <script src="/static/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    <script>
+        let currentStep = 1;
+            const totalSteps = document.querySelectorAll(".step").length;
+
+            function showStep(step) {
+                document.querySelectorAll(".step").forEach((div, index) => {
+                    div.classList.toggle("hidden", index + 1 !== step);
+                });
+
+                document.getElementById("prevBtn").classList.toggle("hidden", step === 1);
+                document.getElementById("nextBtn").classList.toggle("hidden", step === totalSteps);
+                document.getElementById("submitBtn").classList.toggle("hidden", step !== totalSteps);
+            }
+
+            document.getElementById("nextBtn").addEventListener("click", () => {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            });
+
+            document.getElementById("prevBtn").addEventListener("click", () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+
+            showStep(currentStep); // Initialize first step
+    </script>
 
 </body>
 

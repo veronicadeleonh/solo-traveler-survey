@@ -31,8 +31,8 @@ fetch('/get_solo_travel_count')
                 datasets: [{
                     label: 'Count of Submissions',
                     data: data.counts,  // Corresponding counts
-                    backgroundColor: ['rgba(46, 213, 115, 0.2)', 'rgba(153, 102, 255, 0.2)'],  // Different colors for solo vs not solo
-                    borderColor: ['rgba(46, 213, 115, 1)', 'rgba(153, 102, 255, 1)'],
+                    backgroundColor: ['rgb(190, 242, 100, 0.3)', 'rgb(228, 228, 231, 0.3)'],  // Different colors for solo vs not solo
+                    borderColor: ['rgb(190, 242, 100, 1)', 'rgb(228, 228, 231, 1)'],
                     borderWidth: 1
                     }]
                 },
@@ -81,29 +81,43 @@ fetch('/get_trip_count')
     .catch(error => console.error('Error fetching initial chart data:', error));
 
 
-// TRAVEL REASON COUNT CHART
+// TRAVEL REASON STACKED BAR CHART
 fetch('/get_travel_reason_data')
     .then(response => response.json())
     .then(data => {
+        console.log("API data:", data)
+
         const ctx2 = document.getElementById('travelReasonCount').getContext('2d');
 
-        // FETCHED DATA
-        travelReasonCount = new Chart(ctx2, {
+        new Chart(ctx2, {
             type: 'bar',
             data: {
                 labels: data.labels,
-                datasets: [{
-                    label: 'Travel Reason',
-                    data: data.values,
-                    backgroundColor: 'rgba(255, 71, 87, 0.2)',
-                    borderColor: 'rgba(255, 71, 87, 1)',
-                    borderWidth: 1
-                }]
+                datasets: [
+                    {
+                        label: 'Solo Travelers',
+                        data: data.solo_counts,
+                        backgroundColor: 'rgb(190, 242, 100, 0.3)',
+                        borderColor: 'rgb(190, 242, 100, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Non-Solo Travelers',
+                        data: data.non_solo_counts,
+                        backgroundColor: 'rgb(228, 228, 231, 0.3)',
+                        borderColor: 'rgb(228, 228, 231, 1)',
+                        borderWidth: 1
+                    }
+                ]
             },
             options: {
                 responsive: true,
                 scales: {
+                    x: {
+                        stacked: true
+                    },
                     y: {
+                        stacked: true,
                         beginAtZero: true
                     }
                 }
@@ -111,6 +125,7 @@ fetch('/get_travel_reason_data')
         });
     })
     .catch(error => console.error('Error fetching travel reason data:', error));
+
 
 
 // SUBMISSIONS OVER TIME
