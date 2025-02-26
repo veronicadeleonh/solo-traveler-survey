@@ -138,6 +138,16 @@ def submit_survey():
     cluster = predict_cluster(travel_reason, spontaneity)
 
     try:
+        # Process form data
+        if trip_count == "-": 
+            trip_count = None
+
+        if travel_reason == "-": 
+            travel_reason = None 
+
+        if trip_enjoyment == "None": 
+            trip_enjoyment = None 
+
         with get_db_connection() as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
@@ -278,21 +288,29 @@ def get_dashboard_stats():
         total_submissions = fetch_data("SELECT COUNT(*) AS total FROM survey_responses")[0]['total']
         new_today = fetch_data("SELECT COUNT(*) AS new_today FROM survey_responses WHERE DATE(date) = CURDATE()")[0]['new_today']
         solo_percentage = fetch_data("SELECT (COUNT(CASE WHEN solo_travel = 1 THEN 1 END) / COUNT(*)) * 100 AS solo_percentage FROM survey_responses")[0]['solo_percentage']
-        avg_enjoyment = fetch_data("SELECT AVG(enjoyment_rate) AS avg_enjoyment FROM survey_responses")[0]['avg_enjoyment']
+        avg_enjoyment_solo = fetch_data("SELECT AVG(enjoyment_rate) AS avg_enjoyment_solo FROM survey_responses WHERE solo_travel = 1")[0]['avg_enjoyment_solo']
+        avg_enjoyment_non_solo = fetch_data("SELECT AVG(enjoyment_rate) AS avg_enjoyment_non_solo FROM survey_responses WHERE solo_travel = 0")[0]['avg_enjoyment_non_solo']
+        avg_spontaneity_solo = fetch_data("SELECT AVG(spontaneity) AS avg_enjoyment_solo FROM survey_responses WHERE solo_travel = 1")[0]['avg_enjoyment_solo']
+        avg_spontaneity_non_solo = fetch_data("SELECT AVG(spontaneity) AS avg_enjoyment_non_solo FROM survey_responses WHERE solo_travel = 0")[0]['avg_enjoyment_non_solo']
+
+        today_date = datetime.today().strftime("%B, %dth %Y")
+
         return jsonify({
             "total_submissions": total_submissions,
             "new_today": new_today,
             "solo_percentage": round(solo_percentage, 2),
-            "avg_enjoyment": round(avg_enjoyment, 2),
-            "today_date": str(datetime.today())
+            "today_date": today_date,
+            "avg_enjoyment_solo": round(avg_enjoyment_solo),
+            "avg_enjoyment_non_solo": round(avg_enjoyment_non_solo),
+            "avg_spontaneity_solo": round(avg_spontaneity_solo),
+            "avg_spontaneity_non_solo": round(avg_spontaneity_non_solo)
+
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 
-
-
-
-
+if __name__ == '__main__':
+    app.run(debug=True)
 
 

@@ -80,7 +80,7 @@ const soloTravelChart = initializeChart(
 );
 
 const submissionsTimeChart = initializeChart(
-    'submissionsTime', 500, 100, 'line',
+    'submissionsTime', 400, 150, 'line',
     { 
         labels: [], 
         datasets: [{ 
@@ -155,15 +155,111 @@ function fetchDashboardStats() {
             document.getElementById('totalSubmissions').innerText = data.total_submissions;
             document.getElementById('newToday').innerText = data.new_today;
             document.getElementById('soloPercentage').innerText = data.solo_percentage + "%";
-            document.getElementById('avgEnjoyment').innerText = data.avg_enjoyment;
             document.getElementById('todayDate').innerText = data.today_date;
+            document.getElementById('avgEnjoymentSolo').innerText = data.avg_enjoyment_solo;
+            document.getElementById('avgEnjoymentNonSolo').innerText = data.avg_enjoyment_non_solo;
+            document.getElementById('avgSpontaneitySolo').innerText = data.avg_spontaneity_solo;
+            document.getElementById('avgSpontaneityNonSolo').innerText = data.avg_spontaneity_non_solo;
+
         })
         .catch(error => console.error('Error fetching dashboard stats:', error));
 }
 
+// FORM AND MODELS POST
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('survey-form');
+    const steps = document.querySelectorAll('.step');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    let currentStep = 0;
+
+    // Show the current step and hide others
+    function showStep(stepIndex) {
+        steps.forEach((step, index) => {
+            if (index === stepIndex) {
+                step.classList.remove('hidden');
+            } else {
+                step.classList.add('hidden');
+            }
+        });
+
+        // Update button visibility
+        if (stepIndex === steps.length - 1) {
+            // Hide all buttons on the results step (step 8)
+            prevBtn.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            submitBtn.classList.add('hidden');
+        } else {
+            // Show appropriate buttons for other steps
+            prevBtn.classList.toggle('hidden', stepIndex === 0); // Hide "Previous" on step 1
+            nextBtn.classList.toggle('hidden', stepIndex === steps.length - 2); // Hide "Next" on step 7
+            submitBtn.classList.toggle('hidden', stepIndex !== steps.length - 2); // Show "Submit" only on step 7
+        }
+    }
+
+    // Show the first step initially
+    showStep(currentStep);
+
+    // Next button click handler
+    nextBtn.addEventListener('click', function () {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+
+    // Previous button click handler
+    prevBtn.addEventListener('click', function () {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Serialize form data
+    const formData = new FormData(form);
+
+     // Send AJAX request
+    fetch('/submit_survey', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(data => {
+            console.log("Response data:", data); // Log the response data
+            // Display sentiment and cluster results
+            document.getElementById('sentiment-result').innerHTML = `<p>You sound <span style="font-weight:bold">${data.sentiment}</span> about your trip</p>`;
+            document.getElementById('cluster-result').innerHTML = `<p>Travel Cluster: ${data.travel_cluster}</p>`;
+
+            // Move to the results step (step 8)
+            currentStep = steps.length - 1; // Set currentStep to the last step
+            showStep(currentStep); // Show the results step
+
+            // Update charts
+            updateCharts();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Display the error message in the results section
+            document.getElementById('sentiment-result').innerHTML = `<p>Error: ${error.message}</p>`;
+            document.getElementById('cluster-result').innerHTML = `<p>Please try again.</p>`;
+        });
+    });
+});
+
+
 // Fetch and display dashboard stats on page load
 fetchDashboardStats();
-
 
 // UPDATE CHARTS FUNCTION
 function updateCharts() {

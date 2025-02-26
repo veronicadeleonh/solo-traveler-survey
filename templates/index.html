@@ -36,15 +36,16 @@
                     <!-- First Question -->
                     <div id="step-1" class="step col justify-center w-full">
                         <div>
-                            <label for="solo_travel" class="block mb-4 text-lg font-semibold text-left">Do you consider yourself a
-                                solo traveler?</label>
+                            <label for="solo_travel" class="block mb-4 text-lg font-semibold text-left">Do you consider yourself a solo traveler?</label>
                             <div class="flex gap-4">
                                 <div class="items-center">
-                                    <input id="solo_travel_yes" type="radio" name="solo_travel" value="yes" class="w-4 h-4">
+                                    <input checked id="solo_travel_yes" type="radio" name="solo_travel" value="yes" 
+                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
                                     <label for="solo_travel_yes" class="ms-2 text-base">Yes</label>
                                 </div>
                                 <div class="items-center">
-                                    <input id="solo_travel_no" type="radio" name="solo_travel" value="no" class="w-4 h-4">
+                                    <input id="solo_travel_no" type="radio" name="solo_travel" value="no" 
+                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
                                     <label for="solo_travel_no" class="ms-2 text-base">No</label>
                                 </div>
                             </div>
@@ -53,12 +54,12 @@
                     
                     <!--  Second Question -->
 
-                    <div id="step-2" class="step col justify-center w-full">
+                    <div id="step-2" class="step hidden col justify-center w-full">
                         <div>
-                            <label for="trip-count" class="block mb-2 text-lg font-semibol text-left">How many solo trips have you
+                            <label for="trip-count" class="block mb-4 text-lg font-semibold text-left">How many trips have you
                                 taken?</label>
                             <select id="trip-count" name="trip_count"
-                                class="appearance-none bg-zinc-50 border border-zinc-20 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
+                                class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
                                 <option selected>-</option>
                                 <option value="0-1">0-1</option>
                                 <option value="2-5">2-5</option>
@@ -69,11 +70,11 @@
                     
                     <!-- Third Question -->
 
-                    <div id="step-3" class="step col justify-center w-full">
-                        <label for="travel_reason" class="block mb-2 text-base font-normal dark:text-white">What motivates you to
-                            travel solo the most?</label>
+                    <div id="step-3" class="step hidden col justify-center w-full">
+                        <label for="travel_reason" class="block mb-4 text-lg font-semibold text-left">What motivates you to
+                            travel the most?</label>
                         <select id="travel_reason" name="travel_reason"
-                            class="bg-zinc-50 border  border-zinc-200 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
+                            class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
                             <option selected>-</option>
                             <option value="Adventure">Adventure 🌿</option>
                             <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
@@ -84,11 +85,11 @@
 
                     <!-- Fourth Question -->
 
-                    <div id="step-4" class="step col justify-center w-full"> 
-                        <label for="trip_enjoyment" class="block mb-2 text-base font-normal">What’s the best part of traveling
-                            solo for you?</label>
+                    <div id="step-4" class="step hidden col justify-center w-full"> 
+                        <label for="trip_enjoyment" class="block mb-4 text-lg font-semibold text-left">What's the best part of traveling
+                            for you?</label>
                         <select id="trip_enjoyment" name="trip_enjoyment"
-                            class="bg-zinc-50 border border-zinc-200 text-base focus:ring-violet-500 focus:border-violet-500 block w-full">
+                            class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
                             <option selected>-</option>
                             <option value="Practicing a new language">Practicing a new language 🗣️</option>
                             <option value="Meeting new people">Meeting new people 👫</option>
@@ -99,10 +100,10 @@
 
                     <!-- Fifth Question -->
 
-                    <div id="step-2" class="step col justify-center w-full">
+                    <div id="step-2" class="step hidden col justify-center w-full">
                         <div>
-                            <label for="spontaneity" class="block mb-2 text-base font-normal">How spontaneous are you when planning a
-                                solo trip?</label>
+                            <label for="spontaneity" class="block mb-4 text-lg font-semibold text-left">How spontaneous are you when planning a
+                                trip?</label>
                             <div class="relative mb-6">
                                 <input id="spontaneity" name="spontaneity" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
                                 <span class="text-sm absolute start-0 -bottom-6">🐌 Slow & Thoughtful</span>
@@ -113,28 +114,28 @@
 
                     <!-- Fifth Question -->
                     
-                    <div id="step-5" class="step col justify-center w-ful">
-                        <label for="next_destination" class="block mb-2 text-base font-normal">Do you already have your next
+                    <div id="step-5" class="step hidden col justify-center w-ful">
+                        <label for="next_destination" class="block mb-4 text-lg font-semibold text-left">Do you already have your next
                             destination in mind?</label>
-                        <div class="items-center gap-5">
-                            <div class="items-center">
-                                <input id="next_destination" type="radio" value="" name="next_destination"
-                                    class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500 dark:focus:ring-violet-600">
-                                <label for="next_destination" class="ms-2 text-base font-normal dark:text-zinc-300">Yes</label>
-                            </div>
+                        <div class="flex items-center gap-5">
                             <div class="items-center">
                                 <input checked id="next_destination" type="radio" value="" name="next_destination"
-                                    class="w-4 h-4 text-violet-600 bg-zinc-100 border-zinc-200 focus:ring-violet-500 dark:focus:ring-violet-600">
-                                <label for="next_destination" class="ms-2 text-base font-normal dark:text-zinc-300">No</label>
+                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
+                                <label for="next_destination" class="ms-2 text-base font-normal">Yes</label>
+                            </div>
+                            <div class="=items-center">
+                                <input id="next_destination" type="radio" value="" name="next_destination"
+                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
+                                <label for="next_destination" class="ms-2 text-base font-normal">No</label>
                             </div>
                         </div>
                     </div>
 
                     <!-- Sixth Question -->
                     
-                    <div id="step-6" class="step col justify-center w-full">
+                    <div id="step-6" class="step hidden col justify-center w-full">
                         <div>
-                            <label for="enjoyment_rate" class="block mb-2 text-base font-normal">How much did you enjoy your last solo
+                            <label for="enjoyment_rate" class="block mb-4 text-lg font-semibold text-left">How much did you enjoy your last
                                 trip?</label>
                             <div class="relative mb-6">
                                 <input id="enjoyment_rate" name="enjoyment_rate" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
@@ -146,21 +147,29 @@
 
                     <!-- Seventh Question -->
                     
-                    <div id="step-7" class="step col justify-center w-full">
+                    <div id="step-7" class="step hidden col justify-center w-full">
                         <div class="mb-6">
-                            <label for="travel_wishes" class="block mb-2 text-base font-normal">Describe your dream trip in one
+                            <label for="travel_wishes" class="block mb-4 text-lg font-semibold text-left">Describe your dream trip in one
                                 sentence.</label>
                             <input type="text" id="travel_wishes" name="travel_wishes"
-                                class="block w-full p-4 border border-zinc-200 bg-zinc-50 text-base focus:ring-violet-500 focus:border-violet-500">
+                                class="block w-full p-4 border border-zinc-200 bg-zinc-50 text-base focus:ring-blue-500 focus:border-blue-500">
                         </div>
+                    </div>
+
+                    
+                    <!-- Results -->
+                    <div id="step-8" class="step hidden">
+                        <p class="uppercase text-sm font-semibold">Thank you for your submission!</p>
+                        <div id="sentiment-result" class="mt-2"></div>
+                        <div id="cluster-result" class="mt-2"></div>
                     </div>
 
 
                     <!-- Navigation Buttons -->
                     <div class="justify-between mt-4">
-                        <button type="button" id="prevBtn" class="bg-zinc-300 text-white py-2 px-4 hidden">Previous</button>
-                        <button type="button" id="nextBtn" class="bg-violet-600 text-white py-2 px-4">Next</button>
-                        <button type="submit" id="submitBtn" class="bg-violet-600 text-white py-2 px-4 hidden">Submit</button>
+                        <button type="button" id="prevBtn" class="bg-zinc-200 text-white py-2 px-4 hidden">Previous</button>
+                        <button type="button" id="nextBtn" class="text-white py-2 px-4", style="background-color: black">Next</button>
+                        <button type="submit" id="submitBtn" class="text-white py-2 px-4" hidden, style="background-color: black">Submit</button>
                     </div>
         
                     <!-- Submit -->
@@ -168,11 +177,6 @@
                 </form>
             </div>
 
-    
-            <div class="bg-zinc-800 bg-opacity-20 mt-4">
-                <div id="sentiment-result" class="hidden mt-2"></div>
-                <div id="cluster-result" class="hidden mt-2"></div>
-            </div>
 
             <div class="bg-lime-300 p-4 text-smrole="alert">
                 <span class="font-medium uppercase">Important</span> Currently, 99.9% of the data stored is dummy data created in Mockaroo.com and with the help of python random method for protyping purposes
@@ -182,25 +186,18 @@
         </div>
 
 
-        <div class="bg-white w-3/4 p-8">
+        <div class="bg-zinc-50 w-3/4 p-8">
             <div class="flex gap-4">
-                <div class="p-2 border border-zinc-200 mb-6 items-center w-fit">
-                    <p id="todayDate" class="text-3xl font-bold">-</p>
-                    <p class="uppercase text-sm whitespace-nowrap font-normal">Today</p>
-                </div>
-                <div class="p-2 border border-zinc-200 mb-6 items-center w-fit">
-                    <p id="newToday" class="text-3xl font-bold">0</p>
-                    <p class="uppercase text-sm whitespace-nowrap font-normal">New Today</p>
-                </div>
-                <div class="p-2 border border-zinc-200 mb-6 items-center w-fit">
-                    <p id="avgEnjoyment" class="text-3xl font-bold">0</p>
-                    <p class="uppercase text-sm whitespace-nowrap font-normal">Avg. Enjoyment Rate</p>
+                <div class="bg-white py-2 px-4 w-full">
+                    <p id="todayDate" class="text-xl font-bold">-</p>
                 </div>
             </div>
 
-            <div class="gap-6">
+            <hr class="mt-4 mb-4">
+
+            <div class="flex flex-col gap-6">
                 <div class="flex gap-6">
-                    <div class="border border-zinc-200 p-8">
+                    <div class="bg-white p-8">
                         <div>
                             <p id="soloPercentage" class="text-3xl font-bold">0%</p>
                             <p class="uppercase text-sm whitespace-nowrap font-normal">Solo Travelers</p>
@@ -208,23 +205,53 @@
                         <h4 class="uppercase text-sm font-semibold pb-6"></h4>
                         <div><canvas id="soloTravelChart"></canvas></div>
                     </div>
-                    <div class="w-[500px] border border-zinc-200 p-8">
-                        <div>
-                            <p id="totalSubmissions" class="text-3xl font-bold">0</p>
-                            <p class="uppercase text-sm whitespace-nowrap font-normal">Submissions</p>
-                            <h4 class="uppercase text-sm font-semibold pb-6">Submissions over time</h4>
+
+                    <div class="flex flex-col w-2/5">
+                        <div class="bg-white py-2 px-4 w-full">
+                            <h4 class="uppercase text-sm font-semibold pb-2">Solo travelers</h4>
+                            <p id="avgEnjoymentSolo" class="text-3xl font-bold">0</p>
+                            <p class="uppercase text-sm whitespace-nowrap font-normal">Avg. Enjoyment</p>
+                            <p id="avgSpontaneitySolo" class="text-3xl font-bold">0</p>
+                            <p class="uppercase text-sm whitespace-nowrap font-normal">Avg. Spontaneity</p>
+                            
                         </div>
+
+                        <hr class="mt-4 mb-4">
+
+                        <div class="bg-white py-2 px-4 w-full">
+                            <h4 class="uppercase text-sm font-semibold pb-2">Non-Solo travelers</h4>
+                            <p id="avgEnjoymentNonSolo" class="text-3xl font-bold">0</p>
+                            <p class="uppercase text-sm whitespace-nowrap font-normal">Avg. Enjoyment</p>
+                            <p id="avgSpontaneityNonSolo" class="text-3xl font-bold">0</p>
+                            <p class="uppercase text-sm whitespace-nowrap font-normal">Avg. Spontaneity</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="bg-white p-8">
+                        <div class="flex gap-6 mb-6">
+                            <div>
+                                <p id="totalSubmissions" class="text-3xl font-bold">0</p>
+                                <p class="uppercase text-sm whitespace-nowrap font-normal">Submissions</p>
+                            </div>
+
+                            <div>
+                                <p id="newToday" class="text-3xl font-bold">0</p>
+                                <p class="uppercase text-sm whitespace-nowrap font-normal">New Today</p>
+                            </div> 
+                        </div>
+                        <h4 class="uppercase text-sm font-semibold mb-4">Submissions over time</h4>
                         <div><canvas id="submissionsTime"></canvas></div>
                     </div>
                 </div>
                 
                 <div class="flex gap-6">
-                    <div class="w-1/2 border border-zinc-200 p-10">
-                        <h4 class="uppercase text-sm font-semibold pb-6">Travel reasons by Solo vs. Non-solo travelers</h4>
+                    <div class="w-1/2 bg-white p-10">
+                        <h4 class="uppercase text-sm font-semibold pb-6">Travel reasons by vs. travelers</h4>
                         <div><canvas id="travelReasonCount"></canvas></div>
                     </div>
-                    <div class="w-1/2 border border-zinc-200 p-10">
-                        <h4 class="uppercase text-sm font-semibold pb-6">Trip Enjoyment by Solo vs. Non-solo travelers</h4>
+                    <div class="w-1/2 bg-white p-10">
+                        <h4 class="uppercase text-sm font-semibold pb-6">Trip Enjoyment by vs. travelers</h4>
                         <div><canvas id="tripEnjoymentChart" width="200" height="100"></canvas></div>
                     </div>
                 </div>
@@ -234,37 +261,6 @@
 
     <script src="/static/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-
-    <script>
-        let currentStep = 1;
-            const totalSteps = document.querySelectorAll(".step").length;
-
-            function showStep(step) {
-                document.querySelectorAll(".step").forEach((div, index) => {
-                    div.classList.toggle("hidden", index + 1 !== step);
-                });
-
-                document.getElementById("prevBtn").classList.toggle("hidden", step === 1);
-                document.getElementById("nextBtn").classList.toggle("hidden", step === totalSteps);
-                document.getElementById("submitBtn").classList.toggle("hidden", step !== totalSteps);
-            }
-
-            document.getElementById("nextBtn").addEventListener("click", () => {
-                if (currentStep < totalSteps) {
-                    currentStep++;
-                    showStep(currentStep);
-                }
-            });
-
-            document.getElementById("prevBtn").addEventListener("click", () => {
-                if (currentStep > 1) {
-                    currentStep--;
-                    showStep(currentStep);
-                }
-            });
-
-            showStep(currentStep); // Initialize first step
-    </script>
 
 </body>
 
