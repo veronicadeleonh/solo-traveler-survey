@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             console.log("Response data:", data); // Log the response data
             // Display sentiment and cluster results
-            document.getElementById('sentiment-result').innerHTML = `<p>You sound <span style="font-weight:bold">${data.sentiment}</span> about your trip</p>`;
+            document.getElementById('sentiment-result').innerHTML = `<p>You sound <span style="font-weight:bold">${data.sentiment}</span> about your trip.</p>`;
             document.getElementById('cluster-result').innerHTML = `<p>Travel Cluster: ${data.travel_cluster}</p>`;
 
             // Move to the results step (step 8)
