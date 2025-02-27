@@ -1,5 +1,7 @@
 # Solo Traveler Survey Project
 
+![Solo Traveler survey Screenshot](images/survey-web-preview.png)
+
 ## 📌 Overview
 
 The Solo Traveler Survey project is a web-based application designed to collect and analyze data on solo travelers' preferences and experiences. Users can submit their responses through a simple form, and the collected data is stored in a MySQL database. The application also provides statistical insights using interactive charts powered by Chart.js.
