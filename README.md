@@ -13,12 +13,12 @@ Additionally, as a thank-you for completing the survey, the application returns 
 - Flask backend to handle form submissions and database interactions
 - Dynamic visualization of survey results with Chart.js
 - Predictive insights using a clustering model and sentiment analysis
-- Responsive and minimalistic UI for ease of use
+- Minimalistic UI for ease of use
 
 ## 🛠 Tech Stack
 
 - **Backend:** Flask (Python)
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** HTML, TailwindCSS, Flowbite, JavaScript
 - **Database:** MySQL
 - **Visualization:** Chart.js
 - **Machine Learning:** Clustering & Sentiment Analysis Models
@@ -74,6 +74,5 @@ The application will be available at `http://127.0.0.1:5000/`.
 
 ## 🔧 Future Improvements
 
-- User authentication to allow users to track their responses
 - Additional visualizations and data insights
 - Deployment to a cloud platform for public access

@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Response data:", data); // Log the response data
             // Display sentiment and cluster results
             document.getElementById('sentiment-result').innerHTML = `<p>You sound <span style="font-weight:bold">${data.sentiment}</span> about your trip.</p>`;
-            document.getElementById('cluster-result').innerHTML = `<p>Travel Cluster: ${data.travel_cluster}</p>`;
+            document.getElementById('cluster-result').innerHTML = `<p>${data.travel_cluster}</p>`;
 
             // Move to the results step (step 8)
             currentStep = steps.length - 1; // Set currentStep to the last step
