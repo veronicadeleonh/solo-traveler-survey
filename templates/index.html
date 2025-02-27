@@ -33,121 +33,119 @@
             <div class="mb-6 p-6 bg-white">
                 <form id="survey-form" method="POST" action="/submit_survey">
 
-                    <!-- First Question -->
-                    <div id="step-1" class="step col justify-center w-full">
-                        <div>
-                            <label for="solo_travel" class="block mb-4 text-lg font-semibold text-left">Do you consider yourself a solo traveler?</label>
-                            <div class="flex gap-4">
-                                <div class="items-center">
-                                    <input checked id="solo_travel_yes" type="radio" name="solo_travel" value="yes" 
-                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                    <label for="solo_travel_yes" class="ms-2 text-base">Yes</label>
-                                </div>
-                                <div class="items-center">
-                                    <input id="solo_travel_no" type="radio" name="solo_travel" value="no" 
-                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                    <label for="solo_travel_no" class="ms-2 text-base">No</label>
+                    <div class="h-[150px]">
+                        <!-- First Question -->
+                        <div id="step-1" class="step col justify-center w-full">
+                            <div>
+                                <label for="solo_travel" class="block mb-4 text-lg font-semibold text-left">Do you consider yourself a solo traveler?</label>
+                                <div class="flex gap-4">
+                                    <div class="items-center">
+                                        <input checked id="solo_travel_yes" type="radio" name="solo_travel" value="yes" 
+                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
+                                        <label for="solo_travel_yes" class="ms-2 text-base">Yes</label>
+                                    </div>
+                                    <div class="items-center">
+                                        <input id="solo_travel_no" type="radio" name="solo_travel" value="no" 
+                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
+                                        <label for="solo_travel_no" class="ms-2 text-base">No</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!--  Second Question -->
+                        
+                        <!--  Second Question -->
 
-                    <div id="step-2" class="step hidden col justify-center w-full">
-                        <div>
-                            <label for="trip-count" class="block mb-4 text-lg font-semibold text-left">How many trips have you
-                                taken?</label>
-                            <select id="trip-count" name="trip_count"
+                        <div id="step-2" class="step hidden col justify-center w-full">
+                            <div>
+                                <label for="trip-count" class="block mb-4 text-lg font-semibold text-left">How many trips have you
+                                    taken?</label>
+                                <select id="trip-count" name="trip_count"
+                                    class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
+                                    <option selected>-</option>
+                                    <option value="0-1">0-1</option>
+                                    <option value="2-5">2-5</option>
+                                    <option value="6+">6+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Third Question -->
+
+                        <div id="step-3" class="step hidden col justify-center w-full">
+                            <label for="travel_reason" class="block mb-4 text-lg font-semibold text-left">What motivates you to
+                                travel the most?</label>
+                            <select id="travel_reason" name="travel_reason"
                                 class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
                                 <option selected>-</option>
-                                <option value="0-1">0-1</option>
-                                <option value="2-5">2-5</option>
-                                <option value="6+">6+</option>
+                                <option value="Adventure">Adventure 🌿</option>
+                                <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
+                                <option value="Relaxation">Relaxation 🏖️</option>
+                                <option value="Budget-friendly">Budget-friendly💰</option>
                             </select>
                         </div>
-                    </div>
-                    
-                    <!-- Third Question -->
 
-                    <div id="step-3" class="step hidden col justify-center w-full">
-                        <label for="travel_reason" class="block mb-4 text-lg font-semibold text-left">What motivates you to
-                            travel the most?</label>
-                        <select id="travel_reason" name="travel_reason"
-                            class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                            <option selected>-</option>
-                            <option value="Adventure">Adventure 🌿</option>
-                            <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
-                            <option value="Relaxation">Relaxation 🏖️</option>
-                            <option value="Budget-friendly">Budget-friendly💰</option>
-                        </select>
-                    </div>
+                        <!-- Fourth Question -->
 
-                    <!-- Fourth Question -->
+                        <div id="step-4" class="step hidden col justify-center w-full"> 
+                            <label for="trip_enjoyment" class="block mb-4 text-lg font-semibold text-left">What's the best part of traveling
+                                for you?</label>
+                            <select id="trip_enjoyment" name="trip_enjoyment"
+                                class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
+                                <option selected>-</option>
+                                <option value="Practicing a new language">Practicing a new language 🗣️</option>
+                                <option value="Meeting new people">Meeting new people 👫</option>
+                                <option value="Exploring new places">Exploring new places 🏔️</option>
+                                <option value="Trying new food">Trying new food 🍜</option>
+                            </select>
+                        </div>
 
-                    <div id="step-4" class="step hidden col justify-center w-full"> 
-                        <label for="trip_enjoyment" class="block mb-4 text-lg font-semibold text-left">What's the best part of traveling
-                            for you?</label>
-                        <select id="trip_enjoyment" name="trip_enjoyment"
-                            class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                            <option selected>-</option>
-                            <option value="Practicing a new language">Practicing a new language 🗣️</option>
-                            <option value="Meeting new people">Meeting new people 👫</option>
-                            <option value="Exploring new places">Exploring new places 🏔️</option>
-                            <option value="Trying new food">Trying new food 🍜</option>
-                        </select>
-                    </div>
+                        <!-- Fifth Question -->
 
-                    <!-- Fifth Question -->
-
-                    <div id="step-2" class="step hidden col justify-center w-full">
-                        <div>
+                        <div id="step-5" class="step hidden col justify-center w-full">
                             <label for="spontaneity" class="block mb-4 text-lg font-semibold text-left">How spontaneous are you when planning a
                                 trip?</label>
-                            <div class="relative mb-6">
-                                <input id="spontaneity" name="spontaneity" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
-                                <span class="text-sm absolute start-0 -bottom-6">🐌 Slow & Thoughtful</span>
-                                <span class="text-sm absolute end-0 -bottom-6">🎒 Backpack-and-Go</span>
+                            <input id="spontaneity" name="spontaneity" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
+                            <div class="flex justify-between">
+                                <span class="text-sm start-0 -bottom-6">🐌 Slow & Thoughtful</span>
+                                <span class="text-sm end-0 -bottom-6">🎒 Backpack & Go</span>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Fifth Question -->
-                    
-                    <div id="step-5" class="step hidden col justify-center w-ful">
-                        <label for="next_destination" class="block mb-4 text-lg font-semibold text-left">Do you already have your next
-                            destination in mind?</label>
-                        <div class="flex items-center gap-5">
-                            <div class="items-center">
-                                <input checked id="next_destination" type="radio" value="" name="next_destination"
-                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                <label for="next_destination" class="ms-2 text-base font-normal">Yes</label>
-                            </div>
-                            <div class="=items-center">
-                                <input id="next_destination" type="radio" value="" name="next_destination"
-                                    class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                <label for="next_destination" class="ms-2 text-base font-normal">No</label>
+                        <!-- Sixth Question -->
+                        
+                        <div id="step-6" class="step hidden col justify-center w-ful">
+                            <label for="next_destination" class="block mb-4 text-lg font-semibold text-left">Do you already have your next
+                                destination in mind?</label>
+                            <div class="flex items-center gap-5">
+                                <div class="items-center">
+                                    <input checked id="next_destination" type="radio" value="" name="next_destination"
+                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
+                                    <label for="next_destination" class="ms-2 text-base font-normal">Yes</label>
+                                </div>
+                                <div class="=items-center">
+                                    <input id="next_destination" type="radio" value="" name="next_destination"
+                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
+                                    <label for="next_destination" class="ms-2 text-base font-normal">No</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Sixth Question -->
-                    
-                    <div id="step-6" class="step hidden col justify-center w-full">
-                        <div>
+                        <!-- Seventh Question -->
+                        
+                        <div id="step-7" class="step hidden col justify-center w-full">
                             <label for="enjoyment_rate" class="block mb-4 text-lg font-semibold text-left">How much did you enjoy your last
                                 trip?</label>
-                            <div class="relative mb-6">
-                                <input id="enjoyment_rate" name="enjoyment_rate" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
-                                <span class="text-sm absolute start-0 -bottom-6">😭 "Never Again"</span>
-                                <span class="text-sm absolute end-0 -bottom-6">🏝️ "Want to go back now!"</span>
+                            <input id="enjoyment_rate" name="enjoyment_rate" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
+                            <div class="flex justify-between">
+                                <span class="text-sm start-0 -bottom-6">😭 Never Again</span>
+                                <span class="text-sm end-0 -bottom-6">🏝️ Take me back!</span>
                             </div>
                         </div>
-                    </div>
+                
 
-                    <!-- Seventh Question -->
+                    <!-- Eigth Question -->
                     
-                    <div id="step-7" class="step hidden col justify-center w-full">
+                    <div id="step-8" class="step hidden col justify-center w-full">
                         <div class="mb-6">
                             <label for="travel_wishes" class="block mb-4 text-lg font-semibold text-left">Describe your dream trip in one
                                 sentence.</label>
@@ -155,10 +153,10 @@
                                 class="block w-full p-4 border border-zinc-200 bg-zinc-50 text-base focus:ring-blue-500 focus:border-blue-500">
                         </div>
                     </div>
-
+                </div>  
                     
                     <!-- Results -->
-                    <div id="step-8" class="step hidden">
+                    <div id="step-9" class="step hidden">
                         <p class="uppercase text-sm font-semibold">Thank you for your submission!</p>
                         <div id="sentiment-result" class="mt-2"></div>
                         <div id="cluster-result" class="mt-2"></div>
@@ -166,7 +164,7 @@
 
 
                     <!-- Navigation Buttons -->
-                    <div class="justify-between mt-4">
+                    <div class="flex justify-end gap-2 mt-4">
                         <button type="button" id="prevBtn" class="bg-zinc-200 text-white py-2 px-4 hidden">Previous</button>
                         <button type="button" id="nextBtn" class="bg-blue-500 text-white py-2 px-4"">Next</button>
                         <button type="submit" id="submitBtn" class="bg-blue-500 text-white py-2 px-4" hidden">Submit</button>
@@ -204,10 +202,14 @@
 
         <div class="bg-zinc-50 w-3/4 p-8">
 
+            <!-- Header -->
+
             <div class="flex justify-between items-end">
                 <div class="bg-white py-2 px-4 w-fit">
                     <p id="todayDate" class="text-xl font-bold">-</p>
                 </div>
+
+                <!-- Legend -->
 
                 <div class="bg-white p-3">
                     <div class="flex gap-8">
@@ -226,55 +228,59 @@
 
             <hr class="mt-4 mb-4">
 
+            <!-- Solo vs Non-soo Travelers count -->
+
             <div class="flex flex-col gap-6">
                 <div class="flex gap-6">
-                    <div class="bg-white p-8">
-                        <div class="text-end">
+                    <div class="bg-white p-6">
+                        <div class="mb-6 text-end">
                             <p id="soloPercentage" class="text-3xl font-bold">0%</p>
-                            <p class="uppercase text-sm whitespace-nowrap font-normal">Solo Travelers</p>
+                            <p class="text-sm whitespace-nowrap font-normal">Solo Travelers</p>
                         </div>
-                        <h4 class="uppercase text-sm font-semibold pb-6"></h4>
+                        <h4 class="uppercase text-sm font-semibold pb-6">Solo vs Non-solo<br>Travelers count</h4>
                         <div><canvas id="soloTravelChart"></canvas></div>
                     </div>
 
+                    <!-- Dashboard stats column -->
+
                     <div class="flex flex-col w-fit">
-                        <div class="bg-white py-2 px-4 w-full">
+                        <div class="bg-white p-4 w-full">
                             <div class="flex gap-2 items-center mb-3">
                                 <div class="h-3 w-3 bg-lime-200"></div>
                                 <h4 class="uppercase text-sm font-semibold">Solo travelers</h4>
                             </div>
                             <p id="avgEnjoymentSolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="uppercase text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
+                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
                             <p id="avgSpontaneitySolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="uppercase text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
+                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
                             
                         </div>
 
                         <hr class="mt-4 mb-4">
 
-                        <div class="bg-white py-2 px-4 w-full">
+                        <div class="bg-white p-4 w-full">
                             <div class="flex gap-2 items-center mb-3">
                                 <div class="h-3 w-3 bg-zinc-200"></div>
                                 <h4 class="uppercase text-sm font-semibold">Non-Solo travelers</h4>
                             </div>
                                 <p id="avgEnjoymentNonSolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="uppercase text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
+                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
                             <p id="avgSpontaneityNonSolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="uppercase text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
+                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
                         </div>
                         
                     </div>
 
-                    <div class="bg-white p-8">
+                    <div class="bg-white p-6">
                         <div class="flex gap-6 mb-6 justify-end">
                             <div class="text-right">
                                 <p id="totalSubmissions" class="text-3xl font-bold">0</p>
-                                <p class="uppercase text-sm whitespace-nowrap font-normal">Submissions</p>
+                                <p class="text-sm whitespace-nowrap font-normal">Submissions</p>
                             </div>
 
                             <div class="text-right">
                                 <p id="newToday" class="text-3xl font-bold">0</p>
-                                <p class="uppercase text-sm whitespace-nowrap font-normal">New Today</p>
+                                <p class="text-sm whitespace-nowrap font-normal">New Today</p>
                             </div> 
                         </div>
                         <h4 class="uppercase text-sm font-semibold mb-4">Submissions over time</h4>
@@ -282,13 +288,14 @@
                     </div>
                 </div>
                 
+                <!-- Bootom charts -->
                 <div class="flex gap-6">
-                    <div class="w-1/2 bg-white p-10">
-                        <h4 class="uppercase text-sm font-semibold pb-6">Travel reasons by vs. travelers</h4>
+                    <div class="w-1/2 bg-white p-6">
+                        <h4 class="uppercase text-sm font-semibold pb-6">Travel reasons by traveler type</h4>
                         <div><canvas id="travelReasonCount"></canvas></div>
                     </div>
-                    <div class="w-1/2 bg-white p-10">
-                        <h4 class="uppercase text-sm font-semibold pb-6">Trip Enjoyment by vs. travelers</h4>
+                    <div class="w-1/2 bg-white p-6">
+                        <h4 class="uppercase text-sm font-semibold pb-6">Trip Enjoyment by traveler type</h4>
                         <div><canvas id="tripEnjoymentChart" width="200" height="100"></canvas></div>
                     </div>
                 </div>

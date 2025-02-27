@@ -65,7 +65,7 @@ function initializeChart(canvasId, width, height, type, data, options) {
 
 // INITIALIZE CHARTS
 const soloTravelChart = initializeChart(
-    'soloTravelChart', 200, 200, 'doughnut',
+    'soloTravelChart', 180, 180, 'doughnut',
     {
         labels: [],
         datasets: [{
@@ -106,7 +106,7 @@ const travelReasonCount = initializeChart(
             borderWidth: 1 
         }, { 
             data: [],
-            label: 'Non-Solo Travelers',
+            label: ' Non-Solo Travelers',
             backgroundColor: 'rgb(228, 228, 231, 0.3)',
             borderColor: 'rgb(228, 228, 231, 1)',
             borderWidth: 1 
@@ -128,7 +128,7 @@ const tripEnjoymentChart = initializeChart(
             borderWidth: 1 
         }, { 
             data: [],
-            label: 'Non-Solo Travelers',
+            label: ' Non-Solo Travelers',
             backgroundColor: 'rgb(228, 228, 231, 0.3)',
             borderColor: 'rgb(228, 228, 231, 1)',
             borderWidth: 1 
