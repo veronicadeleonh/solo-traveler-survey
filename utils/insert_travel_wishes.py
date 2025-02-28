@@ -7,7 +7,7 @@ import pandas as pd
 import random
 import json
 
-with open('../json/travel_wishes.json', 'r') as f:
+with open('../data/travel_wishes.json', 'r') as f:
     travel_wishes = json.load(f)
 
 load_dotenv()

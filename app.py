@@ -93,7 +93,7 @@ def predict_cluster(travel_reason, spontaneity):
 def handle_null_values(data):
     """Replace '-' with None for all fields in the data dictionary."""
     for key, value in data.items():
-        if value == "-":
+        if value == "":
             data[key] = None
     return data
 
@@ -122,22 +122,29 @@ def submit_survey():
     df = pd.DataFrame([data])
 
     # TREATING MISSING VALUES
-    df['solo_travel'] = df['solo_travel'].fillna(df['solo_travel'].mode()[0])
-    df['trip_count'] = df['trip_count'].fillna(df['trip_count'].mode()[0])
-    df['travel_reason'] = df['travel_reason'].fillna(df['travel_reason'].mode()[0])
-    df['spontaneity'] = pd.to_numeric(df['spontaneity'], errors='coerce').fillna(df['spontaneity'].mean())
-    df['next_destination'] = df['next_destination'].fillna(df['next_destination'].mode()[0])
-    df['enjoyment_rate'] = pd.to_numeric(df['enjoyment_rate'], errors='coerce').fillna(df['enjoyment_rate'].mean())
+    # Handle text/categorical columns
+    text_columns = ['trip_count', 'travel_reason', 'trip_enjoyment', 'travel_wishes']
+    for col in text_columns:
+        df[col] = df[col].fillna("Unknown")
 
-    solo_travel = bool(df['solo_travel'].iloc[0])
-    trip_count = df['trip_count'].iloc[0]
-    travel_reason = df['travel_reason'].iloc[0]
-    trip_enjoyment = df['trip_enjoyment'].iloc[0]
-    spontaneity = int(df['spontaneity'].iloc[0])
-    next_destination = bool(df['next_destination'].iloc[0])
-    enjoyment_rate = int(df['enjoyment_rate'].iloc[0])
-    travel_wishes = df['travel_wishes'].iloc[0] if df['travel_wishes'].iloc[0] else "No answer"
+    # Handle boolean columns
+    df['solo_travel'] = df['solo_travel'].fillna(False)
+    df['next_destination'] = df['next_destination'].fillna(False)
 
+    # Handle numeric columns
+    numeric_columns = ['spontaneity', 'enjoyment_rate']
+    for col in numeric_columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0).astype(int)
+
+    # EXTRACT PROCESSED DATA
+    solo_travel = bool(df['solo_travel'].values[0])
+    trip_count = df['trip_count'].values[0]
+    travel_reason = df['travel_reason'].values[0]
+    trip_enjoyment = df['trip_enjoyment'].values[0]
+    spontaneity = int(df['spontaneity'].values[0])
+    next_destination = bool(df['next_destination'].values[0])
+    enjoyment_rate = int(df['enjoyment_rate'].values[0])
+    travel_wishes = df['travel_wishes'].values[0]
 
     # SENTIMENT PREDICTION
     if not travel_wishes or travel_wishes.lower() == "no answer":
@@ -148,7 +155,10 @@ def submit_survey():
         sentiment = sentiment_model.predict(vectorized_sentiment)[0] 
 
     # CLUSTER PREDICTION
-    cluster = predict_cluster(travel_reason, spontaneity)
+    if travel_reason in ["", "Unknown"]:
+        cluster = "No cluster detected"
+    else:
+        cluster = predict_cluster(travel_reason, spontaneity)
 
     try:
 
@@ -305,10 +315,9 @@ def get_dashboard_stats():
         return jsonify({"error": str(e)}), 500
 
 
-time.sleep(5)
+time.sleep(10)
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
 
