@@ -991,6 +991,10 @@ input[type="range"]::-ms-fill-lower {
   display: inline-flex;
 }
 
+.table {
+  display: table;
+}
+
 .hidden {
   display: none;
 }

@@ -6,6 +6,7 @@
  */
 
 
+
 // UPDATE CHARTS
 function fetchAndUpdateChart(url, chart, dataMapper) {
     fetch(url)

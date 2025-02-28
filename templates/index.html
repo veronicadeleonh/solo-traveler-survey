@@ -57,11 +57,11 @@
 
                         <div id="step-2" class="step hidden col justify-center w-full">
                             <div>
-                                <label for="trip-count" class="block mb-4 text-lg font-semibold text-left">How many trips have you
+                                <label for="trip-count" class="block mb-4 text-lg font-semibold text-left">How many solo trips have you
                                     taken?</label>
                                 <select id="trip-count" name="trip_count"
                                     class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                                    <option selected>-</option>
+                                    <option value="" selected disabled>Choose an option</option>
                                     <option value="0-1">0-1</option>
                                     <option value="2-5">2-5</option>
                                     <option value="6+">6+</option>
@@ -76,7 +76,7 @@
                                 travel the most?</label>
                             <select id="travel_reason" name="travel_reason"
                                 class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                                <option selected>-</option>
+                                <option value="" selected disabled>Choose an option</option>
                                 <option value="Adventure">Adventure 🌿</option>
                                 <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
                                 <option value="Relaxation">Relaxation 🏖️</option>
@@ -91,7 +91,7 @@
                                 for you?</label>
                             <select id="trip_enjoyment" name="trip_enjoyment"
                                 class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                                <option selected>-</option>
+                                <option value="" selected disabled>Choose an option</option>
                                 <option value="Practicing a new language">Practicing a new language 🗣️</option>
                                 <option value="Meeting new people">Meeting new people 👫</option>
                                 <option value="Exploring new places">Exploring new places 🏔️</option>
@@ -176,12 +176,7 @@
             </div>
 
             <!-- Info box -->
-            <div id="alert-5" class="flex items-center p-4 bg-zinc-50" role="alert">
-                <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    fill="fill-zinc-500" viewBox="0 0 20 20">
-                    <path
-                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                </svg>
+            <div id="alert-5" class="flex items-baseline p-4 bg-zinc-50" role="alert">
                 <span class="sr-only">Info</span>
                 <div class="ms-3 text-sm font-normal text-zinc-500">
                     <span class="font-semibold">Note:</span> Currently, 1000 entries in the database are dummy data generated using <a href="https://www.mockaroo.com/" class="font-semibold underline hover:no-underline">Mockaroo.com</a> and Python's random module for

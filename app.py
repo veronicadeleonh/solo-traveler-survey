@@ -6,6 +6,7 @@ from datetime import datetime, date
 from dotenv import load_dotenv
 import joblib
 import re
+import time
 
 load_dotenv()
 
@@ -57,6 +58,7 @@ def home():
     return render_template("index.html")
 
 
+
 # LOAD MODELS FOR THE UI
 
 sentiment_model = joblib.load("pkl/sentiment_model.pkl")
@@ -86,6 +88,14 @@ def predict_cluster(travel_reason, spontaneity):
         return "The Planners - Low spontaneity, prefer structure and well-planned trips."
     else:
         return "The Balanced Travelers - A mix of planning and flexibility depending on the trip."
+    
+
+def handle_null_values(data):
+    """Replace '-' with None for all fields in the data dictionary."""
+    for key, value in data.items():
+        if value == "-":
+            data[key] = None
+    return data
 
 
 # SUBMIT FORM
@@ -104,6 +114,8 @@ def submit_survey():
         'enjoyment_rate': request.form.get("enjoyment_rate", type=int),
         'travel_wishes': request.form.get("travel_wishes", "").strip(),
     }
+
+    data = handle_null_values(data)
 
     print(f"Received: {data}")
 
@@ -126,6 +138,7 @@ def submit_survey():
     enjoyment_rate = int(df['enjoyment_rate'].iloc[0])
     travel_wishes = df['travel_wishes'].iloc[0] if df['travel_wishes'].iloc[0] else "No answer"
 
+
     # SENTIMENT PREDICTION
     if not travel_wishes or travel_wishes.lower() == "no answer":
         sentiment = "No sentiment detected"
@@ -138,15 +151,6 @@ def submit_survey():
     cluster = predict_cluster(travel_reason, spontaneity)
 
     try:
-        # Process form data
-        if trip_count == "-": 
-            trip_count = None
-
-        if travel_reason == "-": 
-            travel_reason = None 
-
-        if trip_enjoyment == "None": 
-            trip_enjoyment = None 
 
         with get_db_connection() as conn:
             with conn.cursor() as cursor:
@@ -193,15 +197,6 @@ def test_connection():
     except mysql.connector.Error as err:
         return f"Error: {err}"
 
-
-# TOTAL SUBMISSIONS
-@app.route('/total_submissions', methods=['GET'])
-def total_submissions():
-    try:
-        result = fetch_data("SELECT COUNT(*) AS total FROM survey_responses")
-        return jsonify({"total_submissions": result[0]['total']})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
 
 
 # SOLO TRAVEL COUNT
@@ -308,6 +303,9 @@ def get_dashboard_stats():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+time.sleep(5)
 
 
 if __name__ == '__main__':
