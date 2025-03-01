@@ -12,7 +12,7 @@
 
     <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,7 +22,7 @@
 
 <body class="h-screen text-lime-950">
     <div class="md:flex md:h-screen">
-        <div class="bg-lime-100 md:w-1/4 p-8">
+        <div class="bg-lime-100 md:w-1/3 p-8">
             <h1 class="font-black uppercase text-3xl mb-6 text-balance">Solo Traveler Survey 🎒🌴</h1>
 
             <div class="mb-6 text-lime-900 text-base">
@@ -33,75 +33,261 @@
             <div class="mb-6 p-6 bg-white">
                 <form id="survey-form" method="POST" action="/submit_survey">
 
-                    <div class="h-[150px]">
-                        <!-- First Question -->
-                        <div id="step-1" class="step col justify-center w-full">
-                            <div>
-                                <label for="solo_travel" class="block mb-4 text-lg font-semibold text-left">Do you consider yourself a solo traveler?</label>
-                                <div class="flex gap-4">
-                                    <div class="items-center">
-                                        <input checked id="solo_travel_yes" type="radio" name="solo_travel" value="yes" 
-                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                        <label for="solo_travel_yes" class="ms-2 text-base">Yes</label>
-                                    </div>
-                                    <div class="items-center">
-                                        <input id="solo_travel_no" type="radio" name="solo_travel" value="no" 
-                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                        <label for="solo_travel_no" class="ms-2 text-base">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!--  Second Question -->
+                    <div class="h-fit">
 
-                        <div id="step-2" class="step hidden col justify-center w-full">
-                            <div>
-                                <label for="trip-count" class="block mb-4 text-lg font-semibold text-left">How many solo trips have you
-                                    taken?</label>
-                                <select id="trip-count" name="trip_count"
-                                    class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                                    <option value="" selected disabled>Choose an option</option>
-                                    <option value="0-1">0-1</option>
-                                    <option value="2-5">2-5</option>
-                                    <option value="6+">6+</option>
-                                </select>
-                            </div>
+                        <!-- 1st Question -->
+
+                        <div id="step-1" class="step col justify-center w-full">
+                            <label for="solo_travel" class="block mb-4 text-lg font-semibold text-left">Do you consider yourself a solo traveler?</label>
+                                <div class="flex flex-col gap-4">
+                                    <!-- Yes -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="solo_travel" value="yes" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Yes</span>
+                                    </label>
+                                    <!-- No -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="solo_travel" value="no" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">No</span>
+                                    </label>
+                                </div>                                  
+                        </div>
+
+                        <!-- 2nd Question -->
+
+                        <div id="step-2" class="step col justify-center w-full">
+                                <label for="solo_travel" class="block mb-4 text-lg font-semibold text-left">What is your age group?</label>
+                                <div class="flex flex-col gap-4">
+                                    <!-- Under 25 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="age" value="under-25" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Under 25</span>
+                                    </label>
+                                    <!-- 25-34 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="age" value="25-34" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">25-34</span>
+                                    </label>
+                                    <!-- 35-44 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="age" value="35-44" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">35-44</span>
+                                    </label>
+                                    <!-- 45-55 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="age" value="45-55" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">45-55</span>
+                                    </label>
+                                    <!-- 55+ -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="age" value="55+" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">55+</span>
+                                    </label>
+                                </div>
                         </div>
                         
-                        <!-- Third Question -->
+                        <!--  3rd Question -->
 
                         <div id="step-3" class="step hidden col justify-center w-full">
-                            <label for="travel_reason" class="block mb-4 text-lg font-semibold text-left">What motivates you to
-                                travel the most?</label>
-                            <select id="travel_reason" name="travel_reason"
-                                class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                                <option value="" selected disabled>Choose an option</option>
-                                <option value="Adventure">Adventure 🌿</option>
-                                <option value="Cultural Immersion">Cultural Immersion 🏛️</option>
-                                <option value="Relaxation">Relaxation 🏖️</option>
-                                <option value="Budget-friendly">Budget-friendly💰</option>
-                            </select>
+                            <label for="trip-count" class="block mb-4 text-lg font-semibold text-left">How many solo trips have you taken?</label>
+                                <div class="flex flex-col gap-4">
+                                    <!-- 0-1 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_count" value="0-1" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">0-1</span>
+                                    </label>
+                                    <!-- 2-5 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_count" value="2-5" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">2-5</span>
+                                    </label>
+                                    <!-- 6-9 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_count" value="6-9" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">6-9</span>
+                                    </label>
+                                    <!-- 10+ -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_count" value="10+" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">10+</span>
+                                    </label>
+                                </div>
+                        </div>
+                        
+                        <!-- 4th Question -->
+
+                        <div id="step-4" class="step hidden col justify-center w-full">
+                            <label for="travel_reason" class="block mb-4 text-lg font-semibold text-left">What motivates you to travel the most?</label>
+                                <div class="flex flex-col gap-4">
+                                    <!-- Adventure 🌿 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="travel_reason" value="Adventure" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Adventure 🌿</span>
+                                    </label>
+                                    <!-- Cultural Immersion 🌍 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="travel_reason" value="Cultural Immersion" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Cultural Immersion 🌍</span>
+                                    </label>
+                                    <!-- Relaxation 🏖️ -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="travel_reason" value="Relaxation" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Relaxation 🏖️</span>
+                                    </label>
+                                    <!-- Budget-friendly 💰 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="travel_reason" value="Budget-friendly" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Budget-friendly 💰</span>
+                                    </label>
+                                    <!-- Self-discovery ✨ -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="travel_reason" value="Self-discovery" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Self-discovery ✨</span>
+                                    </label>
+                                </div>
                         </div>
 
-                        <!-- Fourth Question -->
+                        <!-- 5th Question -->
 
-                        <div id="step-4" class="step hidden col justify-center w-full"> 
-                            <label for="trip_enjoyment" class="block mb-4 text-lg font-semibold text-left">What's the best part of traveling
-                                for you?</label>
-                            <select id="trip_enjoyment" name="trip_enjoyment"
-                                class="bg-zinc-50 border border-zinc-200 text-base focus:ring-blue-500 focus:border-blue-500 block w-full">
-                                <option value="" selected disabled>Choose an option</option>
-                                <option value="Practicing a new language">Practicing a new language 🗣️</option>
-                                <option value="Meeting new people">Meeting new people 👫</option>
-                                <option value="Exploring new places">Exploring new places 🏔️</option>
-                                <option value="Trying new food">Trying new food 🍜</option>
-                            </select>
+                        <div id="step-5" class="step hidden col justify-center w-full"> 
+                            <label for="trip_enjoyment" class="block mb-4 text-lg font-semibold text-left">What's the best part of traveling for you?</label>
+                                <div class="flex flex-col gap-4">
+                                    <!-- Practicing a new language 🗣️-->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_enjoyment" value="Practicing a new language" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Practicing a new language 🗣️</span>
+                                    </label>
+                                    <!-- Meeting new people 👫 -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_enjoyment" value="Meeting new people" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Meeting new people 👫</span>
+                                    </label>
+                                    <!-- Exploring new places 🏔️ -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_enjoyment" value="Exploring new places" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Exploring new places 🏔️</span>
+                                    </label>
+                                    <!-- Trying new food 🍜-->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_enjoyment" value="Trying new food" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Trying new food 🍜</span>
+                                    </label>
+                                    <!-- Personal growth ✨ -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="trip_enjoyment" value="Personal growth" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Personal growth ✨</span>
+                                    </label>
+                                </div>
                         </div>
 
-                        <!-- Fifth Question -->
+                        <!-- 6th Question -->
 
-                        <div id="step-5" class="step hidden col justify-center w-full">
+                        <div id="step-6" class="step hidden col justify-center w-full">
                             <label for="spontaneity" class="block mb-4 text-lg font-semibold text-left">How spontaneous are you when planning a
                                 trip?</label>
                             <input id="spontaneity" name="spontaneity" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
@@ -111,28 +297,37 @@
                             </div>
                         </div>
 
-                        <!-- Sixth Question -->
+                        <!-- 7th Question -->
                         
-                        <div id="step-6" class="step hidden col justify-center w-ful">
-                            <label for="next_destination" class="block mb-4 text-lg font-semibold text-left">Do you already have your next
-                                destination in mind?</label>
-                            <div class="flex items-center gap-5">
-                                <div class="items-center">
-                                    <input checked id="next_destination" type="radio" value="" name="next_destination"
-                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                    <label for="next_destination" class="ms-2 text-base font-normal">Yes</label>
+                        <div id="step-7" class="step hidden col justify-center w-ful">
+                            <label for="next_destination" class="block mb-4 text-lg font-semibold text-left">Do you already have your next destination in mind?</label>
+                                <div class="flex flex-col gap-4">
+                                    <!-- Yes -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="next_destination" value="yes" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">Yes</span>
+                                    </label>
+                                    <!-- No -->
+                                    <label class="flex items-center p-4 border cursor-pointer hover:bg-gray-50">
+                                        <input type="radio" name="next_destination" value="no" class="hidden peer">
+                                        <div
+                                            class="w-5 h-5 border-2 border-gray-300 flex items-center justify-center peer-checked:border-blue-500 peer-checked:bg-blue-500">
+                                            <!-- Checkmark Icon (Hidden by Default) -->
+                                            <i class="fas fa-check text-white opacity-1 peer-checked:opacity-100"></i>
+                                        </div>
+                                        <span class="ml-3">No</span>
+                                    </label>
                                 </div>
-                                <div class="=items-center">
-                                    <input id="next_destination" type="radio" value="" name="next_destination"
-                                        class="w-4 h-4 text-blue-600 bg-zinc-100 border-zinc-200 focus:ring-blue-500">
-                                    <label for="next_destination" class="ms-2 text-base font-normal">No</label>
-                                </div>
-                            </div>
                         </div>
 
-                        <!-- Seventh Question -->
+                        <!-- 8th Question -->
                         
-                        <div id="step-7" class="step hidden col justify-center w-full">
+                        <div id="step-8" class="step hidden col justify-center w-full">
                             <label for="enjoyment_rate" class="block mb-4 text-lg font-semibold text-left">How much did you enjoy your last
                                 trip?</label>
                             <input id="enjoyment_rate" name="enjoyment_rate" type="range" min="1" max="10" value="5" class="slider w-full mb-4">
@@ -143,9 +338,9 @@
                         </div>
                 
 
-                    <!-- Eigth Question -->
+                    <!-- 9th Question -->
                     
-                    <div id="step-8" class="step hidden col justify-center w-full">
+                    <div id="step-9" class="step hidden col justify-center w-full">
                         <div class="mb-6">
                             <label for="travel_wishes" class="block mb-4 text-lg font-semibold text-left">Describe your dream trip in one
                                 sentence.</label>
@@ -156,7 +351,7 @@
                  
                     
                     <!-- Results -->
-                    <div id="step-9" class="step hidden">
+                    <div id="step-10" class="step hidden">
                         <p class="uppercase text-sm font-semibold">Thank you for your submission! 💚</p>
                         <div id="sentiment-result" class="mt-2"></div>
                         <div id="cluster-result" class="mt-2"></div>
@@ -195,7 +390,7 @@
         </div>
 
 
-        <div class="bg-zinc-50 md:w-3/4 p-8">
+        <div class="bg-zinc-50 md:w-1/2 overflow-y-auto p-8">
 
             <!-- Header -->
 

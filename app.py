@@ -1,12 +1,13 @@
 import os
 from flask import Flask, request, render_template, jsonify
 import mysql.connector
+import mysql.connector.pooling
 import pandas as pd
 from datetime import datetime, date
 from dotenv import load_dotenv
 import joblib
 import re
-import time
+
 
 load_dotenv()
 
@@ -17,12 +18,30 @@ db_config = {
     "database": os.getenv("DB_NAME"),
 }
 
+# CONNECTION POOL
+db_pool = mysql.connector.pooling.MySQLConnectionPool(
+    pool_name="my_pool",
+    pool_size=5,  # Number of connections in the pool
+    **db_config
+)
+
 app = Flask(__name__)
 
-
 def get_db_connection():
-    connection = mysql.connector.connect(**db_config)
-    return connection
+    try:
+        return db_pool.get_connection()
+    except mysql.connector.Error as err:
+        print(f"Database connection error: {err}")
+        raise err
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    try:
+        conn = get_db_connection()
+        conn.close()
+        return jsonify({"status": "healthy"}), 200
+    except mysql.connector.Error as err:
+        return jsonify({"status": "unhealthy", "error": str(err)}), 500
 
 
 def fetch_data(query, params=None):
@@ -106,6 +125,7 @@ def submit_survey():
 
     data = {
         'solo_travel': request.form.get("solo_travel", "no") == "yes",
+        'age': request.form.get("age", ""),
         'trip_count': request.form.get("trip_count", ""),
         'travel_reason': request.form.get("travel_reason", ""),
         'trip_enjoyment': request.form.get("trip_enjoyment", ""),
@@ -123,7 +143,7 @@ def submit_survey():
 
     # TREATING MISSING VALUES
     # Handle text/categorical columns
-    text_columns = ['trip_count', 'travel_reason', 'trip_enjoyment', 'travel_wishes']
+    text_columns = ['age', 'trip_count', 'travel_reason', 'trip_enjoyment', 'travel_wishes']
     for col in text_columns:
         df[col] = df[col].fillna("Unknown")
 
@@ -138,6 +158,7 @@ def submit_survey():
 
     # EXTRACT PROCESSED DATA
     solo_travel = bool(df['solo_travel'].values[0])
+    age = df['age'].values[0]
     trip_count = df['trip_count'].values[0]
     travel_reason = df['travel_reason'].values[0]
     trip_enjoyment = df['trip_enjoyment'].values[0]
@@ -167,12 +188,13 @@ def submit_survey():
                 cursor.execute(
                     """
                     INSERT INTO survey_responses 
-                    (date, solo_travel, trip_count, travel_reason, trip_enjoyment, spontaneity, next_destination, enjoyment_rate) 
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    (date, solo_travel, age, trip_count, travel_reason, trip_enjoyment, spontaneity, next_destination, enjoyment_rate) 
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
                     """,
                     (
                         datetime.now(),
                         solo_travel,
+                        age,
                         trip_count,
                         travel_reason,
                         trip_enjoyment,
@@ -250,10 +272,10 @@ def get_trip_enjoyment():
     try:
         results = fetch_data("""
             SELECT trip_enjoyment, 
-                SUM(CASE WHEN solo_travel = 1 THEN 1 ELSE 0 END) AS solo_count,
-                SUM(CASE WHEN solo_travel = 0 THEN 1 ELSE 0 END) AS non_solo_count
+	            SUM(CASE WHEN solo_travel = 1 THEN 1 ELSE 0 END) AS solo_count,
+	            SUM(CASE WHEN solo_travel = 0 THEN 1 ELSE 0 END) AS non_solo_count
             FROM survey_responses
-            WHERE trip_enjoyment IS NOT NULL
+            WHERE trip_enjoyment IS NOT NULL AND trip_enjoyment != "" AND trip_enjoyment != "Unknown"
             GROUP BY trip_enjoyment;
         """)
         labels = [row['trip_enjoyment'] for row in results]
@@ -274,7 +296,7 @@ def get_travel_reason_data():
                    SUM(CASE WHEN solo_travel = 1 THEN 1 ELSE 0 END) AS solo_count,
                    SUM(CASE WHEN solo_travel = 0 THEN 1 ELSE 0 END) AS non_solo_count
             FROM survey_responses
-            WHERE travel_reason IS NOT NULL
+            WHERE travel_reason IS NOT NULL AND travel_reason != "Unknown"
             GROUP BY travel_reason;
         """)
         labels = [row['travel_reason'] for row in results]
@@ -314,8 +336,6 @@ def get_dashboard_stats():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
-time.sleep(10)
 
 
 if __name__ == '__main__':

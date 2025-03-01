@@ -26,7 +26,9 @@ with open(csv_path, 'r') as file:
     for row in reader:
 
         # HANDLING MISSING VALUES FROM CSV
+        date = row['date']
         solo_travel = 1 if row['solo_travel'].upper() == 'TRUE' else 0
+        age = row['age'] if row['age'] else None
         trip_count = row['trip_count'] if row['trip_count'] else None
         travel_reason = row['travel_reason'] if row['travel_reason'] else None
         trip_enjoyment = row['trip_enjoyment'] if row['trip_enjoyment'] else None
@@ -39,13 +41,13 @@ with open(csv_path, 'r') as file:
         
         next_destination = 1 if row['next_destination'].upper() == 'TRUE' else 0
 
-        date = datetime.now()
+        # date = datetime.now()
         
         cursor.execute("""
-            INSERT INTO survey_responses (date, solo_travel, trip_count, travel_reason, 
+            INSERT INTO survey_responses (date, solo_travel, age, trip_count, travel_reason, 
             trip_enjoyment, spontaneity, next_destination, enjoyment_rate) 
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-        """, (date, solo_travel, trip_count, travel_reason, trip_enjoyment, spontaneity, next_destination, enjoyment_rate))
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (date, solo_travel, age, trip_count, travel_reason, trip_enjoyment, spontaneity, next_destination, enjoyment_rate))
     
     conn.commit()
 
