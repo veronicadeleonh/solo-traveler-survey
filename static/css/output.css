@@ -999,6 +999,10 @@ input[type="range"]::-ms-fill-lower {
   display: table;
 }
 
+.contents {
+  display: contents;
+}
+
 .hidden {
   display: none;
 }
@@ -1245,6 +1249,10 @@ input[type="range"]::-ms-fill-lower {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-4 {

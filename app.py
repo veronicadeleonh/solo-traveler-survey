@@ -109,33 +109,29 @@ def predict_cluster(travel_reason, spontaneity):
         return "The Balanced Travelers - A mix of planning and flexibility depending on the trip."
     
 
-def handle_null_values(data):
-    """Replace '-' with None for all fields in the data dictionary."""
-    for key, value in data.items():
-        if value == "":
-            data[key] = None
-    return data
 
 
 # SUBMIT FORM
 @app.route("/submit_survey", methods=["POST"])
 def submit_survey():
 
-    # print("Request form", request.form)
+    print("Request form", request.form)
 
     data = {
         'solo_travel': request.form.get("solo_travel", "no") == "yes",
         'age': request.form.get("age", ""),
+        'current_country': request.form.get("current_country", ""),
+        'current_region': request.form.get("current_region", ""),
         'trip_count': request.form.get("trip_count", ""),
         'travel_reason': request.form.get("travel_reason", ""),
         'trip_enjoyment': request.form.get("trip_enjoyment", ""),
         'spontaneity': request.form.get("spontaneity", type=int),
         'next_destination': request.form.get("next_destination", "no") == "yes",
+        'next_country': request.form.get("next_country", ""),
+        'next_region': request.form.get("next_region", ""),
         'enjoyment_rate': request.form.get("enjoyment_rate", type=int),
         'travel_wishes': request.form.get("travel_wishes", "").strip(),
     }
-
-    data = handle_null_values(data)
 
     print(f"Received: {data}")
 
@@ -143,7 +139,7 @@ def submit_survey():
 
     # TREATING MISSING VALUES
     # Handle text/categorical columns
-    text_columns = ['age', 'trip_count', 'travel_reason', 'trip_enjoyment', 'travel_wishes']
+    text_columns = ['age', 'current_country', 'current_region', 'trip_count', 'travel_reason', 'next_country', 'next_region', 'trip_enjoyment', 'travel_wishes']
     for col in text_columns:
         df[col] = df[col].fillna("Unknown")
 
@@ -159,11 +155,15 @@ def submit_survey():
     # EXTRACT PROCESSED DATA
     solo_travel = bool(df['solo_travel'].values[0])
     age = df['age'].values[0]
+    current_country = df['current_country'].values[0]
+    current_region = df['current_region'].values[0]
     trip_count = df['trip_count'].values[0]
     travel_reason = df['travel_reason'].values[0]
     trip_enjoyment = df['trip_enjoyment'].values[0]
     spontaneity = int(df['spontaneity'].values[0])
     next_destination = bool(df['next_destination'].values[0])
+    next_country = df['next_country'].values[0]
+    next_region = df['next_region'].values[0]
     enjoyment_rate = int(df['enjoyment_rate'].values[0])
     travel_wishes = df['travel_wishes'].values[0]
 
@@ -185,6 +185,7 @@ def submit_survey():
 
         with get_db_connection() as conn:
             with conn.cursor() as cursor:
+                print("Inserting into survey_responses...")
                 cursor.execute(
                     """
                     INSERT INTO survey_responses 
@@ -206,6 +207,7 @@ def submit_survey():
 
                 survey_id = cursor.lastrowid  # Get the inserted survey ID
 
+                print("Inserting into travel_wishes...")
                 cursor.execute(
                     """
                     INSERT INTO travel_wishes (survey_id, wish_text) 
@@ -213,6 +215,16 @@ def submit_survey():
                     """,
                     (survey_id, travel_wishes),
                 )
+
+                print("Inserting into user_locations...")
+                cursor.execute(
+                    """
+                    INSERT INTO user_locations (survey_id, current_country, current_region, next_country, next_region) 
+                    VALUES (%s, %s, %s, %s, %s)
+                    """,
+                    (survey_id, current_country, current_region, next_country, next_region),
+                )
+
                 conn.commit()
 
         return jsonify({"message": "Survey submitted!", "sentiment": sentiment, "travel_cluster": cluster})

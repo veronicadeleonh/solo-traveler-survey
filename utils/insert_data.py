@@ -48,6 +48,7 @@ with open(csv_path, 'r') as file:
             trip_enjoyment, spontaneity, next_destination, enjoyment_rate) 
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (date, solo_travel, age, trip_count, travel_reason, trip_enjoyment, spontaneity, next_destination, enjoyment_rate))
+
     
     conn.commit()
 
