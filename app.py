@@ -347,6 +347,30 @@ def get_travel_reason_data():
         return jsonify(labels=labels, solo_counts=solo_counts, non_solo_counts=non_solo_counts)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+# TRAVELERS ENJOYMENT 
+@app.route('/get_solo_travelers_enjoyment', methods=['GET'])
+def get_solo_travelers_enjoyment():
+    try:
+        # Fetch data from the database
+        results = fetch_data("""
+            SELECT 
+                trip_enjoyment, 
+                AVG(enjoyment_rate) AS avg_enjoyment_rate
+            FROM survey_responses
+            WHERE solo_travel = 1
+            GROUP BY trip_enjoyment;
+        """)
+        
+        # Format the data for the chart
+        labels = [row['trip_enjoyment'] for row in results]
+        avg_enjoyment_rates = [row['avg_enjoyment_rate'] for row in results]
+        
+        return jsonify(labels=labels, avg_enjoyment_rates=avg_enjoyment_rates)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
 
 
 

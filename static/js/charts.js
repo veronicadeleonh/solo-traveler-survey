@@ -49,11 +49,18 @@ const travelReasonDataMapper = (data) => ({
     datasetsData: [data.solo_counts, data.non_solo_counts]
 });
 
+// TRAVEL EJOYMENT
+const SoloTravelersEnjoymentDataMapper = (data) => ({
+    labels: data.labels,
+    datasetsData: [data.avg_enjoyment_rates]
+});
+
 // TRIP COUNT CHART
 const tripEnjoymentDataMapper = (data) => ({
     labels: data.labels,
     datasetsData: [data.solo_counts, data.non_solo_counts]
 });
+
 
 
 
@@ -119,7 +126,7 @@ const ageDistributionChart = initializeChart(
             borderWidth: 1 
         }] 
     },
-    { responsive: true, scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false }}  }
+    {  indexAxis: 'y', responsive: true, plugins: { legend: { display: false }}  }
 );
 
 
@@ -166,12 +173,31 @@ const tripEnjoymentChart = initializeChart(
     {  indexAxis: 'y', responsive: true, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true } }, plugins: { legend: { display: false }}  }
 );
 
+
+const SoloTravelersEnjoymentChart = initializeChart(
+    'SoloTravelersEnjoymentChart', 300, 150, 'bar',
+    { 
+        labels: [], 
+        datasets: [{ 
+            data: [], 
+            label: ' Average Enjoyment Rate',
+            backgroundColor: 'rgba(190, 242, 100, 0.3)',
+            borderColor: 'rgba(190, 242, 100, 1)',
+            borderWidth: 1 
+        }] 
+    },
+    { responsive: true, scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false }} }
+);
+
+
+
 // FETCH AND UPDATE
 fetchAndUpdateChart('/get_solo_travel_count', soloTravelChart, soloTravelDataMapper);
 fetchAndUpdateChart('/get_age_distribution', ageDistributionChart, ageDistributionDataMapper);
 fetchAndUpdateChart('/get_trip_enjoyment', tripEnjoymentChart, tripEnjoymentDataMapper);
 fetchAndUpdateChart('/get_travel_reason_data', travelReasonCount, travelReasonDataMapper);
 fetchAndUpdateChart('/get_submissions_over_time', submissionsTimeChart, submissionsOverTimeDataMapper);
+fetchAndUpdateChart('/get_solo_travelers_enjoyment', SoloTravelersEnjoymentChart, SoloTravelersEnjoymentDataMapper);
 
 
 //GET DASHBOARD STATS
@@ -330,5 +356,6 @@ function updateCharts() {
     fetchAndUpdateChart('/get_trip_enjoyment', tripEnjoymentChart, tripEnjoymentDataMapper);
     fetchAndUpdateChart('/get_travel_reason_data', travelReasonCount, travelReasonDataMapper);
     fetchAndUpdateChart('/get_submissions_over_time', submissionsTimeChart, submissionsOverTimeDataMapper);
+    fetchAndUpdateChart('/get_solo_travelers_enjoyment', SoloTravelersEnjoymentChart, SoloTravelersEnjoymentDataMapper);
     fetchDashboardStats()
 }
