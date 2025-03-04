@@ -933,6 +933,10 @@ input[type="range"]::-ms-fill-lower {
   inset-inline-start: 0px;
 }
 
+.order-1 {
+  order: 1;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -1487,6 +1491,10 @@ input[type="range"]::-ms-fill-lower {
 
   .md\:items-end {
     align-items: flex-end;
+  }
+
+  .md\:justify-end {
+    justify-content: flex-end;
   }
 
   .md\:justify-between {

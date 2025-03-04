@@ -277,6 +277,36 @@ def get_submissions_over_time():
         return jsonify({"error": str(e)}), 500
 
 
+# AGE DISTRIBUITION
+@app.route('/get_age_distribution', methods=['GET'])
+def get_age_distribution():
+    try:
+        results = fetch_data("""
+            SELECT 
+                age, 
+                SUM(CASE WHEN solo_travel = 1 THEN 1 ELSE 0 END) AS solo_count,
+                SUM(CASE WHEN solo_travel = 0 THEN 1 ELSE 0 END) AS non_solo_count
+            FROM survey_responses
+            WHERE age IS NOT NULL
+            GROUP BY age
+            ORDER BY 
+                CASE 
+                    WHEN age = 'Under 25' THEN 1
+                    WHEN age = '25-34' THEN 2
+                    WHEN age = '35-44' THEN 3
+                    WHEN age = '45-54' THEN 4
+                    WHEN age = '55+' THEN 5
+                    ELSE 6
+                END;
+        """)
+        labels = [row['age'] for row in results]
+        solo_counts = [row['solo_count'] for row in results]
+        non_solo_counts = [row['non_solo_count'] for row in results]
+        return jsonify(labels=labels, solo_counts=solo_counts, non_solo_counts=non_solo_counts)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 # TRIP ENJOYMENT
 @app.route('/get_trip_enjoyment', methods=['GET'])

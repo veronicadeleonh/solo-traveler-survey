@@ -23,7 +23,7 @@
 
 <body class="h-screen text-lime-950">
     <div class="md:flex md:h-screen">
-        <div class="bg-lime-100 md:w-1/2 p-8">
+        <div class="bg-lime-100 md:w-1/2 p-10">
             <h1 class="font-black uppercase text-3xl mb-6 text-balance">Solo Traveler Survey 🎒🌴</h1>
 
             <div class="mb-6 text-lime-900 text-base">
@@ -410,7 +410,7 @@
         </div>
 
 
-        <div class="bg-zinc-50 md:w-1/2 overflow-y-auto p-8">
+        <div class="bg-zinc-50 md:w-1/2 overflow-y-auto p-10">
 
             <!-- Header -->
 
@@ -419,93 +419,110 @@
                     <p id="todayDate" class="text-xl font-bold">-</p>
                 </div>
 
-                <!-- Legend -->
-
-                <div class="bg-white p-3">
-                    <div class="flex gap-8">
-                        <div class="flex gap-2 items-center">
-                            <div class="h-3 w-3 bg-lime-200"></div>
-                            <div class="text-sm">Solo Traveler</div>
-                        </div>
-                        <div class="flex gap-2 items-center">
-                            <div class="h-3 w-3 bg-zinc-200"></div>
-                            <div class="text-sm">Non-solo Traveler</div>
-                        </div>
+                <div class= flex gap-6 mb-6 justify-end">
+                    <div class="bg-white py-2 px-4 text-right">
+                        <p id="totalSubmissions" class="text-3xl font-bold">0</p>
+                        <p class="text-sm whitespace-nowrap font-normal">Submissions</p>
+                    </div>
+                
+                    <div class="bg-white py-2 px-4 text-right">
+                        <p id="newToday" class="text-3xl font-bold">0</p>
+                        <p class="text-sm whitespace-nowrap font-normal">New Today</p>
                     </div>
                 </div>
                 
             </div>
 
             <hr class="mt-4 mb-4">
+            
+            <!-- Submissions over time -->
+                
+                <div class="bg-white p-6">
+                    <h4 class="uppercase text-sm font-semibold mb-4">Submissions over time</h4>
+                    <div><canvas id="submissionsTime"></canvas></div>
+                </div>
 
-            <!-- Solo vs Non-solo Travelers count -->
+            <hr class="mt-4 mb-4">
 
-            <div class="flex flex-col gap-6 ">
+            <div class="flex flex-col gap-6">
 
-                <div class="md:flex md:flex-row md:gap-6 flex flex-col gap-6">
-                    <div class="bg-white p-6">
-                        <div class="mb-6 text-end">
-                            <p id="soloPercentage" class="text-3xl font-bold">0%</p>
-                            <p class="text-sm whitespace-nowrap font-normal">Solo Travelers</p>
+                    <!-- Legend -->
+                    
+                    <div class="flex justify-end">
+                        <div class="bg-white p-3 w-fit">
+                            <div class="flex gap-8">
+                                <div class="flex gap-2 items-center">
+                                    <div class="h-3 w-3 bg-lime-200"></div>
+                                    <div class="text-sm">Solo Traveler</div>
+                                </div>
+                                <div class="flex gap-2 items-center">
+                                    <div class="h-3 w-3 bg-zinc-200"></div>
+                                    <div class="text-sm">Non-solo Traveler</div>
+                                </div>
+                            </div>
                         </div>
-                        <h4 class="uppercase text-sm font-semibold pb-6">Solo vs Non-solo<br>Travelers count</h4>
-                        <div><canvas id="soloTravelChart"></canvas></div>
                     </div>
+
+
+                    <div class="flex flex-col md:flex-row md:justify-end gap-6">
+
+                    <!-- Solo vs Non-solo Travelers count -->
+
+                        <div class="bg-white p-6">
+                            <div class="mb-6 text-end">
+                                <p id="soloPercentage" class="text-3xl font-bold">0%</p>
+                                <p class="text-sm whitespace-nowrap font-normal">Solo Travelers</p>
+                            </div>
+                            <h4 class="uppercase text-sm font-semibold pb-6">Solo vs Non-solo<br>Travelers count</h4>
+                            <div><canvas id="soloTravelChart"></canvas></div>
+                        </div>
 
                     <!-- Dashboard stats column -->
 
-                    <div class="md:flex md:flex-col md:w-fit w-full">
-                        <div class="bg-white p-4 w-full">
-                            <div class="flex gap-2 items-center mb-3">
-                                <div class="h-3 w-3 bg-lime-200"></div>
-                                <h4 class="uppercase text-sm font-semibold">Solo travelers</h4>
+                        <div class="md:flex md:flex-col md:w-fit w-full">
+                            <div class="bg-white p-4 w-full">
+                                <div class="flex gap-2 items-center mb-3">
+                                    <div class="h-3 w-3 bg-lime-200"></div>
+                                    <h4 class="uppercase text-sm font-semibold">Solo travelers</h4>
+                                </div>
+                                <p id="avgEnjoymentSolo" class="text-3xl font-bold text-end">0</p>
+                                <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
+                                <p id="avgSpontaneitySolo" class="text-3xl font-bold text-end">0</p>
+                                <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
+                                
                             </div>
-                            <p id="avgEnjoymentSolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
-                            <p id="avgSpontaneitySolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
-                            
-                        </div>
 
-                        <hr class="mt-4 mb-4">
+                            <hr class="mt-4 mb-4">
 
-                        <div class="bg-white p-4 w-full">
-                            <div class="flex gap-2 items-center mb-3">
-                                <div class="h-3 w-3 bg-zinc-200"></div>
-                                <h4 class="uppercase text-sm font-semibold">Non-Solo travelers</h4>
+                            <div class="bg-white p-4 w-full">
+                                <div class="flex gap-2 items-center mb-3">
+                                    <div class="h-3 w-3 bg-zinc-200"></div>
+                                    <h4 class="uppercase text-sm font-semibold">Non-Solo travelers</h4>
+                                </div>
+                                    <p id="avgEnjoymentNonSolo" class="text-3xl font-bold text-end">0</p>
+                                <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
+                                <p id="avgSpontaneityNonSolo" class="text-3xl font-bold text-end">0</p>
+                                <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
                             </div>
-                                <p id="avgEnjoymentNonSolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Enjoyment</p>
-                            <p id="avgSpontaneityNonSolo" class="text-3xl font-bold text-end">0</p>
-                            <p class="text-sm whitespace-nowrap font-normal text-end">Avg. Spontaneity</p>
                         </div>
-                        
                     </div>
 
+                    <!-- Age Distribution -->
+                    
                     <div class="bg-white p-6">
-                        <div class="flex gap-6 mb-6 justify-end">
-                            <div class="text-right">
-                                <p id="totalSubmissions" class="text-3xl font-bold">0</p>
-                                <p class="text-sm whitespace-nowrap font-normal">Submissions</p>
-                            </div>
-
-                            <div class="text-right">
-                                <p id="newToday" class="text-3xl font-bold">0</p>
-                                <p class="text-sm whitespace-nowrap font-normal">New Today</p>
-                            </div> 
-                        </div>
-                        <h4 class="uppercase text-sm font-semibold mb-4">Submissions over time</h4>
-                        <div><canvas id="submissionsTime"></canvas></div>
+                        <h4 class="uppercase text-sm font-semibold pb-6">Age Distribution of Solo vs. Non-Solo Travelers</h4>
+                        <div><canvas id="ageDistributionChart"></canvas></div>
                     </div>
-                </div>
+
                 
                 <!-- Bootom charts -->
-                <div class="md:flex md:flex-row md:gap-6 flex flex-col gap-6">
-                    <div class="md:w-1/2 bg-white p-6">
+
+                <div class="flex flex-col gap-6">
+                    <div class="bg-white p-6">
                         <h4 class="uppercase text-sm font-semibold pb-6">Travel reasons by traveler type</h4>
                         <div><canvas id="travelReasonCount"></canvas></div>
                     </div>
-                    <div class="md:w-1/2 bg-white p-6">
+                    <div class="bg-white p-6">
                         <h4 class="uppercase text-sm font-semibold pb-6">Trip Enjoyment by traveler type</h4>
                         <div><canvas id="tripEnjoymentChart" width="200" height="100"></canvas></div>
                     </div>

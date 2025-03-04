@@ -11,6 +11,7 @@ function fetchAndUpdateChart(url, chart, dataMapper) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             const { labels, datasetsData } = dataMapper(data);
             chart.data.labels = labels;
             chart.data.datasets.forEach((dataset, index) => {
@@ -34,6 +35,12 @@ const soloTravelDataMapper = (data) => ({
 const submissionsOverTimeDataMapper = (data) => ({
     labels: data.labels,
     datasetsData: [data.values]
+});
+
+// AGE DISTRIBUITION
+const ageDistributionDataMapper = (data) => ({
+    labels: data.labels,
+    datasetsData: [data.solo_counts, data.non_solo_counts]
 });
 
 // TRAVEL REASON
@@ -80,7 +87,7 @@ const soloTravelChart = initializeChart(
 );
 
 const submissionsTimeChart = initializeChart(
-    'submissionsTime', 400, 150, 'line',
+    'submissionsTime', 400, 80, 'line',
     { 
         labels: [], 
         datasets: [{ 
@@ -94,6 +101,28 @@ const submissionsTimeChart = initializeChart(
     { responsive: true, scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false }} }
 );
 
+const ageDistributionChart = initializeChart(
+    'ageDistributionChart', 300, 150, 'bar',
+    { 
+        labels: [], 
+        datasets: [{ 
+            data: [],
+            label: ' Solo Travelers', 
+            backgroundColor: 'rgba(190, 242, 100, 0.3)',
+            borderColor: 'rgb(190, 242, 100, 1)',
+            borderWidth: 1 
+        }, { 
+            data: [],
+            label: ' Non-Solo Travelers',
+            backgroundColor: 'rgba(228, 228, 231, 0.3)',
+            borderColor: 'rgb(228, 228, 231, 1)',
+            borderWidth: 1 
+        }] 
+    },
+    { responsive: true, scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false }}  }
+);
+
+
 const travelReasonCount = initializeChart(
     'travelReasonCount', 300, 150, 'bar',
     { 
@@ -101,14 +130,14 @@ const travelReasonCount = initializeChart(
         datasets: [{ 
             data: [],
             label: ' Solo Travelers', 
-            backgroundColor: 'rgb(190, 242, 100, 0.3)',
-            borderColor: 'rgb(190, 242, 100, 1)',
+            backgroundColor: 'rgba(190, 242, 100, 0.3)',
+            borderColor: 'rgba(190, 242, 100, 1)',
             borderWidth: 1 
         }, { 
             data: [],
             label: ' Non-Solo Travelers',
-            backgroundColor: 'rgb(228, 228, 231, 0.3)',
-            borderColor: 'rgb(228, 228, 231, 1)',
+            backgroundColor: 'rgba(228, 228, 231, 0.3)',
+            borderColor: 'rgba(228, 228, 231, 1)',
             borderWidth: 1 
         }] 
     },
@@ -123,14 +152,14 @@ const tripEnjoymentChart = initializeChart(
         datasets: [{ 
             data: [],
             label: ' Solo Travelers', 
-            backgroundColor: 'rgb(190, 242, 100, 0.3)',
-            borderColor: 'rgb(190, 242, 100, 1)',
+            backgroundColor: 'rgba(190, 242, 100, 0.3)',
+            borderColor: 'rgba(190, 242, 100, 1)',
             borderWidth: 1 
         }, { 
             data: [],
             label: ' Non-Solo Travelers',
-            backgroundColor: 'rgb(228, 228, 231, 0.3)',
-            borderColor: 'rgb(228, 228, 231, 1)',
+            backgroundColor: 'rgba(228, 228, 231, 0.3)',
+            borderColor: 'rgba(228, 228, 231, 1)',
             borderWidth: 1 
         }] 
     },
@@ -139,6 +168,7 @@ const tripEnjoymentChart = initializeChart(
 
 // FETCH AND UPDATE
 fetchAndUpdateChart('/get_solo_travel_count', soloTravelChart, soloTravelDataMapper);
+fetchAndUpdateChart('/get_age_distribution', ageDistributionChart, ageDistributionDataMapper);
 fetchAndUpdateChart('/get_trip_enjoyment', tripEnjoymentChart, tripEnjoymentDataMapper);
 fetchAndUpdateChart('/get_travel_reason_data', travelReasonCount, travelReasonDataMapper);
 fetchAndUpdateChart('/get_submissions_over_time', submissionsTimeChart, submissionsOverTimeDataMapper);
@@ -296,6 +326,7 @@ fetchDashboardStats();
 // UPDATE CHARTS FUNCTION
 function updateCharts() {
     fetchAndUpdateChart('/get_solo_travel_count', soloTravelChart, soloTravelDataMapper);
+    fetchAndUpdateChart('/get_age_distribution', ageDistributionChart, ageDistributionDataMapper);
     fetchAndUpdateChart('/get_trip_enjoyment', tripEnjoymentChart, tripEnjoymentDataMapper);
     fetchAndUpdateChart('/get_travel_reason_data', travelReasonCount, travelReasonDataMapper);
     fetchAndUpdateChart('/get_submissions_over_time', submissionsTimeChart, submissionsOverTimeDataMapper);
