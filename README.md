@@ -2,13 +2,13 @@
 
 ![Solo Traveler survey Screenshot](images/survey-web-preview.png)
 
-## 📌 Overview
+## Overview
 
 The Solo Traveler Survey project is a web-based application designed to collect and analyze data on solo travelers' preferences and experiences. Users can submit their responses through a simple form, and the collected data is stored in a MySQL database. The application also provides statistical insights using interactive charts powered by Chart.js.
 
 Additionally, as a thank-you for completing the survey, the application returns a personalized prediction to the user. A clustering model and a sentiment analysis model were implemented to generate insights based on the user's responses.
 
-## 🚀 Features
+## Features
 
 - User-friendly HTML form to collect survey responses
 - Data storage using MySQL for persistence
@@ -17,7 +17,7 @@ Additionally, as a thank-you for completing the survey, the application returns 
 - Predictive insights using a clustering model and sentiment analysis
 - Minimalistic UI for ease of use
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Backend:** Flask (Python)
 - **Frontend:** HTML, TailwindCSS, Flowbite, JavaScript
@@ -25,7 +25,7 @@ Additionally, as a thank-you for completing the survey, the application returns 
 - **Visualization:** Chart.js
 - **Machine Learning:** Clustering & Sentiment Analysis Models
 
-## 🏗 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 
